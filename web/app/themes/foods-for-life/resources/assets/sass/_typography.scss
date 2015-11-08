@@ -1,0 +1,25 @@
+/** Font utility classes */
+.primary-font {
+  @include font-family-primary-regular();
+}
+
+.primary-font-bold {
+  @include font-family-primary-bold();
+}
+
+.primary-font-semibold {
+  @include font-family-primary-semibold();
+}
+
+.font-primary-color {
+  color: $font-color-primary;
+}
+
+.font-secondary-color {
+  color: $font-color-secondary;
+}
+
+.font-dark-color {
+  color: $font-color-dark;
+}
+/** End font utility classes */

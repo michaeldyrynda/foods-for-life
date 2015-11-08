@@ -1,0 +1,178 @@
+/** Slider */
+.et_boxed_layout #page-container .home__slider {
+  padding: 0;
+
+  @media screen and (min-width: 1118px) {
+    .home__slider__image .et_pb_slide_description .et_pb_slide_content {
+      height: 230px;
+    }
+  }
+
+  .et_pb_row {
+    padding: 0;
+    width: 100%;
+
+    .et_pb_column_1_3 {
+      margin-right: 0;
+      width: 100%;
+
+      @media screen and (min-width: 1118px) and (max-width: 1549px) { width: 33%; }
+      @media screen and (min-width: 1550px) { width: 390px; }
+
+      .home__slider__description .et_pb_slide_description {
+        text-align: left;
+        
+        @media screen and (min-width: 1118px) and (max-width: 1549px) {
+          padding: 10% 8%;
+        }
+
+        .et_pb_slide_title {
+          color: $font-color-primary !important;
+          line-height: 1.3em;
+          margin-bottom: 0.7em;
+
+          @media screen and (max-width: 1549px) {
+            font-size: 28px;
+            line-height: 1.1em;
+          }
+        }
+
+        .et_pb_slide_content {
+          color: $font-color-primary !important;
+        }
+
+        .et_pb_more_button {
+          @include primary-button();
+        }
+      }
+    }
+
+    .et_pb_column_2_3 {
+      @media screen and (min-width: 1118px) and (max-width: 1549px) { width: 67%; }
+      @media screen and (min-width: 1550px) {
+        width: 780px;
+
+        .et_pb_slide_description .et_pb_slide .et_pb_container {
+          min-height: 415px !important;
+        }
+      }
+
+      .home__slider__image {
+        @media screen and (max-width: 1117px) {
+          display: none;
+        }
+
+        @media screen and (min-width: 1118px) and (max-width: 1549px) {
+          min-height: auto !important;
+        }
+      }
+    }
+  }
+}
+/** End slider */
+
+/** Calls to action */
+.et_boxed_layout #page-container .home__calls_to_action {
+  padding: 0;
+
+  .et_pb_row {
+    padding: 0;
+    width: 100%;
+
+    .et_pb_column_1_3 {
+      margin-right: 0;
+      width: 33.333%;
+
+      @media screen and (min-width: 1550px) {
+        width: 390px;
+      }
+    }
+
+    .et_pb_column .et_pb_promo_button {
+      @include primary-button();
+
+      margin-top: 20px;
+    }
+  }
+}
+/** End calls to action */
+
+
+/** Specials */
+.home__latest-specials .et_pb_fullwidth_header .et_pb_fullwidth_header_container {
+  .header-content {
+    margin: 0 auto;
+    padding: 0px;
+  }
+
+  h1 {
+    @include font-family-primary-bold();
+
+    color: $font-color-primary !important;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+}
+
+.home__specials__call-to-action .et_pb_promo_button {
+  @include primary-button($font-color-secondary);
+}
+
+.home__specials {
+  color: $font-color-dark;
+  font-size: 18px;
+  line-height: 30px;
+  width: 70%;
+}
+/** End specials */
+
+/** News signup and food detective */
+.et_boxed_layout #page-container .home__enews__food-detective {
+  padding: 0;
+
+  .et_pb_row {
+    margin: 0;
+    width: 100%;
+  }
+
+  .et_pb_column {
+    height: 400px;
+    padding: 40px;
+  }
+
+  .home__enews__food-detective__heading {
+    @include font-family-primary-bold;
+
+    color: $font-color-primary !important;
+    font-size: 30px;
+    height: 90px;
+    line-height: 1.1em;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+
+    p {
+      padding-bottom: 0;
+    }
+  }
+
+  .et_pb_column:first-child {
+    background: url('./img/bg_enews.jpg') top center no-repeat;
+  }
+
+  .et_pb_column:last-child {
+    background: url('./img/bg_food-detective.jpg') top center no-repeat;
+  }
+}
+/** End news signup and food detective */
+
+/** Our brands */
+.our-brands__heading {
+  @include font-family-primary-bold();
+
+  color: $font-color-secondary;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+/** End our brands */

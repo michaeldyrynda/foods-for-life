@@ -1,0 +1,204 @@
+/*
+ * Theme Name:  Foods For Life
+ * Description: Foods For Life
+ * Author:      Michael Dyrynda <michael@iatstuti.net>
+ * Author URI:  https://iatstuti.net
+ * Template:    Divi
+ * Version:     1.0.0
+ */
+@import url("../Divi/style.css");
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+body {
+  background-color: #e3dacb; }
+
+/** Font utility classes */
+.primary-font {
+  font-family: "Open Sans", sans-serif; }
+
+.primary-font-bold {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700; }
+
+.primary-font-semibold {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600; }
+
+.font-primary-color {
+  color: #e7ded0; }
+
+.font-secondary-color {
+  color: #a61f14; }
+
+.font-dark-color {
+  color: #2e2823; }
+
+/** End font utility classes */
+/** Slider */
+.et_boxed_layout #page-container .home__slider {
+  padding: 0; }
+  @media screen and (min-width: 1118px) {
+    .et_boxed_layout #page-container .home__slider .home__slider__image .et_pb_slide_description .et_pb_slide_content {
+      height: 230px; } }
+  .et_boxed_layout #page-container .home__slider .et_pb_row {
+    padding: 0;
+    width: 100%; }
+    .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 {
+      margin-right: 0;
+      width: 100%; }
+      @media screen and (min-width: 1118px) and (max-width: 1549px) {
+        .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 {
+          width: 33%; } }
+      @media screen and (min-width: 1550px) {
+        .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 {
+          width: 390px; } }
+      .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 .home__slider__description .et_pb_slide_description {
+        text-align: left; }
+        @media screen and (min-width: 1118px) and (max-width: 1549px) {
+          .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 .home__slider__description .et_pb_slide_description {
+            padding: 10% 8%; } }
+        .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 .home__slider__description .et_pb_slide_description .et_pb_slide_title {
+          color: #e7ded0 !important;
+          line-height: 1.3em;
+          margin-bottom: 0.7em; }
+          @media screen and (max-width: 1549px) {
+            .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 .home__slider__description .et_pb_slide_description .et_pb_slide_title {
+              font-size: 28px;
+              line-height: 1.1em; } }
+        .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 .home__slider__description .et_pb_slide_description .et_pb_slide_content {
+          color: #e7ded0 !important; }
+        .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 .home__slider__description .et_pb_slide_description .et_pb_more_button {
+          font-family: "Open Sans", sans-serif;
+          font-weight: 700;
+          border-color: #e7ded0;
+          color: #e7ded0;
+          font-size: 14px;
+          margin-top: 29px;
+          padding: 0.5em 2.2em;
+          text-transform: uppercase; }
+          .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_1_3 .home__slider__description .et_pb_slide_description .et_pb_more_button:after {
+            line-height: 0.7; }
+    @media screen and (min-width: 1118px) and (max-width: 1549px) {
+      .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_2_3 {
+        width: 67%; } }
+    @media screen and (min-width: 1550px) {
+      .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_2_3 {
+        width: 780px; }
+        .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_2_3 .et_pb_slide_description .et_pb_slide .et_pb_container {
+          min-height: 415px !important; } }
+    @media screen and (max-width: 1117px) {
+      .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_2_3 .home__slider__image {
+        display: none; } }
+    @media screen and (min-width: 1118px) and (max-width: 1549px) {
+      .et_boxed_layout #page-container .home__slider .et_pb_row .et_pb_column_2_3 .home__slider__image {
+        min-height: auto !important; } }
+
+/** End slider */
+/** Calls to action */
+.et_boxed_layout #page-container .home__calls_to_action {
+  padding: 0; }
+  .et_boxed_layout #page-container .home__calls_to_action .et_pb_row {
+    padding: 0;
+    width: 100%; }
+    .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column_1_3 {
+      margin-right: 0;
+      width: 33.333%; }
+      @media screen and (min-width: 1550px) {
+        .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column_1_3 {
+          width: 390px; } }
+    .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column .et_pb_promo_button {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      border-color: #e7ded0;
+      color: #e7ded0;
+      font-size: 14px;
+      margin-top: 29px;
+      padding: 0.5em 2.2em;
+      text-transform: uppercase;
+      margin-top: 20px; }
+      .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column .et_pb_promo_button:after {
+        line-height: 0.7; }
+
+/** End calls to action */
+/** Specials */
+.home__latest-specials .et_pb_fullwidth_header .et_pb_fullwidth_header_container .header-content {
+  margin: 0 auto;
+  padding: 0px; }
+
+.home__latest-specials .et_pb_fullwidth_header .et_pb_fullwidth_header_container h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #e7ded0 !important;
+  font-size: 40px;
+  text-transform: uppercase; }
+
+.home__specials__call-to-action .et_pb_promo_button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  border-color: #a61f14;
+  color: #a61f14;
+  font-size: 14px;
+  margin-top: 29px;
+  padding: 0.5em 2.2em;
+  text-transform: uppercase; }
+  .home__specials__call-to-action .et_pb_promo_button:after {
+    line-height: 0.7; }
+
+.home__specials {
+  color: #2e2823;
+  font-size: 18px;
+  line-height: 30px;
+  width: 70%; }
+
+/** End specials */
+/** News signup and food detective */
+.et_boxed_layout #page-container .home__enews__food-detective {
+  padding: 0; }
+  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_row {
+    margin: 0;
+    width: 100%; }
+  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column {
+    height: 400px;
+    padding: 40px; }
+  .et_boxed_layout #page-container .home__enews__food-detective .home__enews__food-detective__heading {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #e7ded0 !important;
+    font-size: 30px;
+    height: 90px;
+    line-height: 1.1em;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    text-transform: uppercase; }
+    .et_boxed_layout #page-container .home__enews__food-detective .home__enews__food-detective__heading p {
+      padding-bottom: 0; }
+  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column:first-child {
+    background: url("./img/bg_enews.jpg") top center no-repeat; }
+  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column:last-child {
+    background: url("./img/bg_food-detective.jpg") top center no-repeat; }
+
+/** End news signup and food detective */
+/** Our brands */
+.our-brands__heading {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #a61f14;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase; }
+
+/** End our brands */
+#main-footer .footer-widget .textwidget {
+  font-size: 14px; }
+
+#main-footer .footer-widget h4.title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #e7ded0 !important;
+  font-size: 15px;
+  margin-bottom: 5px; }
+
+#main-footer .footer-widget:first-child h4.title {
+  border-top: 1px solid #e7ded0;
+  padding-top: 15px; }
+
+/*# sourceMappingURL=style.css.map */
