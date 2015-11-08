@@ -213,7 +213,8 @@ body {
   padding-top: 40px;
   text-transform: uppercase; }
 
-.cafe__heading__dark, .cafe__heading__light {
+.cafe__heading__dark,
+.cafe__heading__light {
   font-size: 30px; }
 
 .cafe__heading__dark {
@@ -232,7 +233,8 @@ body {
   padding-bottom: 40px;
   padding-top: 40px; }
 
-.cafe__text__dark, .cafe__text__light {
+.cafe__text__dark,
+.cafe__text__light {
   font-size: 18px;
   line-height: 24px; }
 
