@@ -1,0 +1,47 @@
+/** Health foods landing page */
+.health-foods__heading h1 {
+  @include heading($font-color-primary);
+  @include heading-uppercase();
+
+  text-align: center;
+}
+
+.health-foods__subheading {
+  background-color: $font-color-secondary;
+
+  .et_pb_row .et_pb_column .et_pb_text {
+    color: $font-color-primary !important;
+    font-size: 20px;
+    line-height: 1.6em;
+    width: 67%;
+  }
+}
+
+.health-foods__thumbnail-caption {
+  @include font-family-primary-bold();
+
+  background-color: #f3ece1;
+  line-height: 4.5em;
+
+  a {
+    color: $font-color-secondary;
+    text-transform: uppercase;
+  }
+}
+/** End health foods landing page */
+
+/** Health foods internal page(s) */
+.health-foods__internal__heading-brands {
+  @include heading($font-color-secondary);
+  @include heading-uppercase();
+
+  font-size: 30px;
+  text-align: center;
+}
+
+.health-foods__cta .et_pb_promo_button {
+  border-color: $font-color-secondary;
+  color: $font-color-secondary;
+  text-transform: uppercase;
+}
+/** End health foods internal page(s) */
