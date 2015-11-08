@@ -8,13 +8,16 @@
  */
 @import url("../Divi/style.css");
 
-@import "_variables";
-@import "_mixins";
+@import "variables";
+@import "mixins";
 
 body {
   background-color: $site-background-color;
 }
 
-@import "_typography";
-@import "_home";
-@import "_footer";
+@import "typography";
+@import "footer";
+@import "navigation";
+
+@import "home";
+@import "cafe";

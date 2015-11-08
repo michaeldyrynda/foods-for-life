@@ -26,3 +26,16 @@
     line-height: 0.7;
   }
 }
+
+@mixin heading($color: $font-color-primary) {
+  @include font-family-primary-bold();
+
+  color: $color !important;
+  font-size: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+@mixin heading-uppercase($color: $font-color-primary) {
+  text-transform: uppercase;
+}

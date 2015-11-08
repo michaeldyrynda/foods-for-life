@@ -33,6 +33,23 @@ body {
   color: #2e2823; }
 
 /** End font utility classes */
+#main-footer .footer-widget .textwidget {
+  font-size: 14px; }
+
+#main-footer .footer-widget h4.title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #e7ded0 !important;
+  font-size: 15px;
+  margin-bottom: 5px; }
+
+#main-footer .footer-widget:first-child h4.title {
+  border-top: 1px solid #e7ded0;
+  padding-top: 15px; }
+
+.nav li {
+  line-height: 1.8em; }
+
 /** Slider */
 .et_boxed_layout #page-container .home__slider {
   padding: 0; }
@@ -187,18 +204,61 @@ body {
   text-transform: uppercase; }
 
 /** End our brands */
-#main-footer .footer-widget .textwidget {
-  font-size: 14px; }
-
-#main-footer .footer-widget h4.title {
+.cafe__heading h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   color: #e7ded0 !important;
-  font-size: 15px;
-  margin-bottom: 5px; }
+  font-size: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  text-transform: uppercase; }
 
-#main-footer .footer-widget:first-child h4.title {
-  border-top: 1px solid #e7ded0;
-  padding-top: 15px; }
+.cafe__heading__dark, .cafe__heading__light {
+  font-size: 30px; }
+
+.cafe__heading__dark {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #2e2823 !important;
+  font-size: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px; }
+
+.cafe__heading__light {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #e7ded0 !important;
+  font-size: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px; }
+
+.cafe__text__dark, .cafe__text__light {
+  font-size: 18px;
+  line-height: 24px; }
+
+.cafe__text__dark {
+  color: #2e2823; }
+
+.cafe__text__light {
+  color: #e7ded0; }
+
+.et_boxed_layout #page-container .cafe__menu__group .et_pb_row {
+  margin: 0;
+  width: 100%; }
+  .et_boxed_layout #page-container .cafe__menu__group .et_pb_row .et_pb_column {
+    margin: 0;
+    width: 50%; }
+
+.et_boxed_layout #page-container .cafe__cta .et_pb_promo_description h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #a61f14;
+  font-size: 20px;
+  text-transform: uppercase; }
+
+.et_boxed_layout #page-container .cafe__cta .et_pb_promo_description p {
+  color: #2e2823;
+  padding-bottom: 30px;
+  padding-top: 30px; }
 
 /*# sourceMappingURL=style.css.map */
