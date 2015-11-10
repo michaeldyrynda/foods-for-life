@@ -1,0 +1,49 @@
+#main-content.ffl-single-post {
+  background-color: #e3dacb;
+
+  .container {
+    padding-top: 0;
+    width: 100%;
+
+    &:before {
+      background-color: transparent;
+    }
+  }
+
+  .et_pb_fullwidth_header {
+    background-image: url(http://foodsforlife.dev/app/uploads/2015/11/header_news.jpg);
+  }
+
+  h1.entry-title {
+    @include font-family-primary-bold();
+
+    color: $font-color-dark;
+    font-size: 24px;
+    line-height: 1.5em;
+    padding-top: 20px;
+  }
+
+  #left-area {
+    background-color: #e3dacb;
+    color: $font-color-dark;
+    padding: 60px;
+    width: 75%;
+
+    .post-meta {
+      color: $font-color-dark;
+      font-size: 16px;
+      font-style: italic;
+
+      a {
+        color: $font-color-secondary;
+      }
+    }
+
+    .entry-content {
+      p {
+        color: $font-color-dark;
+        line-height: 1.8em;
+      }
+    }
+  }
+}
