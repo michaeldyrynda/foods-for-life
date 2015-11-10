@@ -318,5 +318,54 @@ body {
   text-transform: uppercase; }
 
 /** End health foods internal page(s) */
+.news__heading h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #e7ded0 !important;
+  font-size: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  text-transform: uppercase; }
+
+.et_boxed_layout #page-container .news__content h4.widgettitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #a61f14;
+  padding-bottom: 20px; }
+
+.et_boxed_layout #page-container .news__content .et_pb_widget.widget_categories ul li {
+  font-size: 15px;
+  margin-bottom: 1em; }
+  .et_boxed_layout #page-container .news__content .et_pb_widget.widget_categories ul li a {
+    color: #2e2823; }
+
+.et_boxed_layout #page-container .news__content .et_pb_blog_grid_wrapper h2.entry-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #2e2823;
+  font-size: 14px;
+  line-height: 1.5em; }
+
+.et_boxed_layout #page-container .news__content .et_pb_blog_grid_wrapper .post-meta {
+  color: #2e2823;
+  font-style: italic;
+  font-size: 11px; }
+  .et_boxed_layout #page-container .news__content .et_pb_blog_grid_wrapper .post-meta a {
+    color: #a61f14; }
+
+.et_boxed_layout #page-container .news__content .et_pb_blog_grid_wrapper p {
+  color: #2e2823;
+  font-size: 13px; }
+
+@media screen and (min-width: 1171px) {
+  .et_boxed_layout #page-container .news__content .et_pb_row {
+    margin: 0; }
+    .et_boxed_layout #page-container .news__content .et_pb_row .et_pb_column.et_pb_column_3_4 {
+      margin-right: 2.5%;
+      padding: 60px 0 60px 60px; }
+    .et_boxed_layout #page-container .news__content .et_pb_row .et_pb_column.et_pb_column_1_4 {
+      padding: 60px 0 60px 40px;
+      width: 23.875%; } }
 
 /*# sourceMappingURL=style.css.map */
