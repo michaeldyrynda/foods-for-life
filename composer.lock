@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ebb2181bfeb96745e737d6dca60b77ab",
-    "content-hash": "0465b3d6a864ff8bd1b559c67dc7e8ac",
+    "hash": "26f456319eb517c8e8a2f9533b429cc7",
+    "content-hash": "be7419284c63bef4e1635df5e773ce33",
     "packages": [
         {
             "name": "composer/installers",
@@ -240,6 +240,26 @@
                 "environment"
             ],
             "time": "2015-10-28 18:53:35"
+        },
+        {
+            "name": "wpackagist-plugin/ninja-forms",
+            "version": "2.9.28",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/ninja-forms/",
+                "reference": "tags/2.9.28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.2.9.28.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ninja-forms/"
         }
     ],
     "packages-dev": [],
