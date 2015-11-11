@@ -1,22 +1,4 @@
 /** Health foods landing page */
-.health-foods__heading h1 {
-  @include heading($font-color-primary);
-  @include heading-uppercase();
-
-  text-align: center;
-}
-
-.health-foods__subheading {
-  background-color: $font-color-secondary;
-
-  .et_pb_row .et_pb_column .et_pb_text {
-    color: $font-color-primary !important;
-    font-size: 20px;
-    line-height: 1.6em;
-    width: 67%;
-  }
-}
-
 .health-foods__thumbnail-caption {
   @include font-family-primary-bold();
 

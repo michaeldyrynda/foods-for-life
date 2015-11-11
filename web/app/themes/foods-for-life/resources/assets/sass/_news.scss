@@ -1,8 +1,3 @@
-.news__heading h1 {
-  @include heading($font-color-primary);
-  @include heading-uppercase();
-}
-
 .et_boxed_layout #page-container .news__content {
   h4.widgettitle {
     @include font-family-primary-bold();

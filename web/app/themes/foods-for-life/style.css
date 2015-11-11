@@ -32,6 +32,24 @@ body {
 .font-dark-color {
   color: #2e2823; }
 
+.page__heading h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #e7ded0 !important;
+  font-size: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  text-transform: uppercase;
+  text-align: center; }
+
+.page__subheading {
+  background-color: #a61f14; }
+  .page__subheading .et_pb_row .et_pb_column .et_pb_text {
+    color: #e7ded0 !important;
+    font-size: 20px;
+    line-height: 1.6em;
+    width: 67%; }
+
 /** End font utility classes */
 #main-footer .footer-widget .textwidget {
   font-size: 14px; }
@@ -212,15 +230,6 @@ body {
   text-transform: uppercase; }
 
 /** End our brands */
-.cafe__heading h1 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-  color: #e7ded0 !important;
-  font-size: 40px;
-  padding-bottom: 40px;
-  padding-top: 40px;
-  text-transform: uppercase; }
-
 .cafe__heading__dark,
 .cafe__heading__light {
   font-size: 30px; }
@@ -272,24 +281,6 @@ body {
   padding-top: 30px; }
 
 /** Health foods landing page */
-.health-foods__heading h1 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-  color: #e7ded0 !important;
-  font-size: 40px;
-  padding-bottom: 40px;
-  padding-top: 40px;
-  text-transform: uppercase;
-  text-align: center; }
-
-.health-foods__subheading {
-  background-color: #a61f14; }
-  .health-foods__subheading .et_pb_row .et_pb_column .et_pb_text {
-    color: #e7ded0 !important;
-    font-size: 20px;
-    line-height: 1.6em;
-    width: 67%; }
-
 .health-foods__thumbnail-caption {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
@@ -318,15 +309,6 @@ body {
   text-transform: uppercase; }
 
 /** End health foods internal page(s) */
-.news__heading h1 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-  color: #e7ded0 !important;
-  font-size: 40px;
-  padding-bottom: 40px;
-  padding-top: 40px;
-  text-transform: uppercase; }
-
 .et_boxed_layout #page-container .news__content h4.widgettitle {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
