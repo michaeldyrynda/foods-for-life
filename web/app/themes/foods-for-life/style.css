@@ -415,7 +415,7 @@ body {
             padding: 20px 20px 0 20px; } }
         #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 .et_pb_widget.widget_categories {
           background-color: #f3ece1;
-          padding-left: 40px; }
+          padding-left: 30px; }
           @media screen and (max-width: 479px) {
             #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 .et_pb_widget.widget_categories {
               padding: 0; } }
