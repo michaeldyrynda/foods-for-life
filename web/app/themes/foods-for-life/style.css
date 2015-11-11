@@ -368,13 +368,8 @@ body {
 
 #main-content.ffl-single-post {
   background-color: #e3dacb; }
-  #main-content.ffl-single-post .container {
-    padding-top: 0;
-    width: 100%; }
-    #main-content.ffl-single-post .container:before {
-      background-color: transparent; }
   #main-content.ffl-single-post .et_pb_fullwidth_header {
-    background-image: url(http://foodsforlife.dev/app/uploads/2015/11/header_news.jpg); }
+    background-image: url(/app/uploads/2015/11/header_news.jpg); }
   #main-content.ffl-single-post h1.entry-title {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
@@ -382,19 +377,52 @@ body {
     font-size: 24px;
     line-height: 1.5em;
     padding-top: 20px; }
-  #main-content.ffl-single-post #left-area {
+  #main-content.ffl-single-post h4.widgettitle {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #a61f14;
+    padding-bottom: 20px; }
+  #main-content.ffl-single-post .et_pb_section_1 {
     background-color: #e3dacb;
-    color: #2e2823;
-    padding: 60px;
-    width: 75%; }
-    #main-content.ffl-single-post #left-area .post-meta {
-      color: #2e2823;
-      font-size: 16px;
-      font-style: italic; }
-      #main-content.ffl-single-post #left-area .post-meta a {
-        color: #a61f14; }
-    #main-content.ffl-single-post #left-area .entry-content p {
-      color: #2e2823;
-      line-height: 1.8em; }
+    padding: 0; }
+    #main-content.ffl-single-post .et_pb_section_1 .et_pb_row {
+      padding: 0;
+      width: 100%; }
+      #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_0,
+      #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 {
+        padding-bottom: 60px;
+        padding-top: 60px; }
+      #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_0 {
+        padding-left: 60px;
+        padding-right: 60px; }
+        @media screen and (max-width: 479px) {
+          #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_0 {
+            padding: 20px; } }
+        #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_0 .post-meta {
+          color: #2e2823;
+          font-size: 16px;
+          font-style: italic; }
+          #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_0 .post-meta a {
+            color: #a61f14; }
+        #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_0 .entry-content p {
+          color: #2e2823;
+          line-height: 1.8em; }
+      #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 {
+        background-color: #f3ece1; }
+        @media screen and (max-width: 479px) {
+          #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 {
+            padding: 20px 20px 0 20px; } }
+        #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 .et_pb_widget.widget_categories {
+          background-color: #f3ece1;
+          padding-left: 40px; }
+          @media screen and (max-width: 479px) {
+            #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 .et_pb_widget.widget_categories {
+              padding: 0; } }
+          #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 .et_pb_widget.widget_categories ul li {
+            font-size: 15px;
+            margin-bottom: 1em; }
+            #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 .et_pb_widget.widget_categories ul li a {
+              color: #2e2823; }
 
 /*# sourceMappingURL=style.css.map */

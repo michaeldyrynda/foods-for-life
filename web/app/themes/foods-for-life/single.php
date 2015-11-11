@@ -20,9 +20,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                 </div>
             </section>
         </div>
-        <div class="container">
-            <div id="content-area" class="clearfix">
-                <div id="left-area">
+        <div class="et_pb_section et_pb_section_1 et_pb_with_background et_section_regular">
+            <div class="et_pb_row et_pb_row_0 et_pb_equal_columns et_pb_row_3-4_1_4">
+                <div class="et_pb_column et_pb_column_3_4 et_pb_column_0">
                     <?php while ( have_posts() ) : the_post(); ?>
                         <?php if (et_get_option('divi_integration_single_top') <> '' && et_get_option('divi_integrate_singletop_enable') == 'on') echo(et_get_option('divi_integration_single_top')); ?>
 
@@ -131,14 +131,15 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                                 if ( ( comments_open() || get_comments_number() ) && 'on' == et_get_option( 'divi_show_postcomments', 'on' ) )
                                     comments_template( '', true );
                                 ?>
-                            </div> <!-- .et_post_meta_wrapper -->
-                        </article> <!-- .et_pb_post -->
+                            </div>
+                        </article>
 
                         <?php if (et_get_option('divi_integration_single_bottom') <> '' && et_get_option('divi_integrate_singlebottom_enable') == 'on') echo(et_get_option('divi_integration_single_bottom')); ?>
                     <?php endwhile; ?>
-                </div> <!-- #left-area -->
-
-                <?php dynamic_sidebar('ffl-news-sidebar'); ?>
+                </div>
+                <div class="et_pb_column et_pb_column_1_4 et_pb_column_1">
+                    <?php dynamic_sidebar('ffl-news-sidebar'); ?>
+                </div>
             </div> <!-- #content-area -->
         </div> <!-- .container -->
     </div> <!-- #main-content -->
