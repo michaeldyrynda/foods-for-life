@@ -1,0 +1,65 @@
+.et_boxed_layout #page-container .catering__form {
+  h1 {
+    @include font-family-primary-bold();
+
+    color: $font-color-secondary;
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
+  h2 {
+    @include font-family-primary-bold();
+
+    color: $font-color-secondary;
+    font-size: 20px;
+    padding: 20px 0 5px 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: $font-color-dark;
+    padding-bottom: 0.2em;
+  }
+
+  .ninja-forms-all-fields-wrap {
+    padding: 30px;
+  }
+
+  .catering__menu-item {
+    background-color: #fbf8f4;
+    color: $font-color-dark;
+    display: inline-block;
+    font-size: 11px;
+    padding: 20px 0;
+    height: 370px;
+
+    h3 {
+      @include font-family-primary-bold();
+
+      color: $font-color-dark;
+      font-size: 14px;
+      padding-left: 20px;
+    }
+
+    > p {
+      line-height: 1.3em;
+      padding-bottom: 10px;
+      padding-left: 20px;
+
+      > em {
+        color: $font-color-secondary;
+      }
+    }
+
+    div {
+      position: relative;
+      top: -20px;
+
+      img {
+        height: auto;
+        min-width: 240px;
+      }
+    }
+
+  }
+}

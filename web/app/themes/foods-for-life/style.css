@@ -407,4 +407,52 @@ body {
             #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 .et_pb_widget.widget_categories ul li a {
               color: #2e2823; }
 
+.et_boxed_layout #page-container .catering__form h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #a61f14;
+  font-size: 20px;
+  padding-bottom: 30px; }
+
+.et_boxed_layout #page-container .catering__form h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #a61f14;
+  font-size: 20px;
+  padding: 20px 0 5px 0;
+  text-transform: uppercase; }
+
+.et_boxed_layout #page-container .catering__form p {
+  color: #2e2823;
+  padding-bottom: 0.2em; }
+
+.et_boxed_layout #page-container .catering__form .ninja-forms-all-fields-wrap {
+  padding: 30px; }
+
+.et_boxed_layout #page-container .catering__form .catering__menu-item {
+  background-color: #fbf8f4;
+  color: #2e2823;
+  display: inline-block;
+  font-size: 11px;
+  padding: 20px 0;
+  height: 370px; }
+  .et_boxed_layout #page-container .catering__form .catering__menu-item h3 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #2e2823;
+    font-size: 14px;
+    padding-left: 20px; }
+  .et_boxed_layout #page-container .catering__form .catering__menu-item > p {
+    line-height: 1.3em;
+    padding-bottom: 10px;
+    padding-left: 20px; }
+    .et_boxed_layout #page-container .catering__form .catering__menu-item > p > em {
+      color: #a61f14; }
+  .et_boxed_layout #page-container .catering__form .catering__menu-item div {
+    position: relative;
+    top: -20px; }
+    .et_boxed_layout #page-container .catering__form .catering__menu-item div img {
+      height: auto;
+      min-width: 240px; }
+
 /*# sourceMappingURL=style.css.map */
