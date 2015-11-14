@@ -442,13 +442,15 @@ body {
       color: #2e2823;
       padding: 10px 0 10px 15px;
       text-align: center;
-      width: 40%; }
-    .et_boxed_layout #page-container .catering__menu table.order button.delete {
+      width: 30%; }
+    .et_boxed_layout #page-container .catering__menu table.order button.delete,
+    .et_boxed_layout #page-container .catering__menu table.order button.update {
       background: transparent;
       border: 0 none;
       text-decoration: underline;
       text-transform: uppercase; }
-      .et_boxed_layout #page-container .catering__menu table.order button.delete:hover {
+      .et_boxed_layout #page-container .catering__menu table.order button.delete:hover,
+      .et_boxed_layout #page-container .catering__menu table.order button.update:hover {
         cursor: pointer; }
     .et_boxed_layout #page-container .catering__menu table.order thead {
       background-color: #2e2823;

@@ -10,8 +10,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 // Get all categories that are a child of the Catering category
 $categories = get_catering_posts();
 
-//print '<pre>' . var_export($categories, true); die();
-
 ?>
 
 <div id="main-content" xmlns="http://www.w3.org/1999/html">
@@ -26,10 +24,10 @@ $categories = get_catering_posts();
                     <div class="et_pb_section catering__menu et_pb_section_99 et_pb_with_background et_section_regular">
                         <div class="et_pb_row et_pb_row_99 et_pb_row_4col">
                             <table class="order">
-                                <col style="width: 40%;" />
+                                <col style="width: 45%;" />
                                 <col style="width: 20%;" />
-                                <col style="width: 15%;" />
-                                <col style="width: 15%;" />
+                                <col style="width: 25%;" />
+                                <col style="width: 10%;" />
                                 <thead>
                                 <tr>
                                     <th>Item</th>
@@ -125,7 +123,7 @@ $categories = get_catering_posts();
             update_cart(id, quantity, description, price, minimum, min_desc);
         });
 
-        $('table.order button.delete').live('click', (function (e) {
+        $('table.order button.delete').live('click', function (e) {
             var row  = $(this).parent().parent(),
                 item = row.find('.quantity');
 
@@ -141,7 +139,26 @@ $categories = get_catering_posts();
             if (items.length == 0) {
                 $('#no-items').show();
             }
-        }));
+        });
+
+        $('table.order button.update').live('click', function (e) {
+            var row  = $(this).parent().parent(),
+                item = row.find('.quantity');
+
+            var id       = item.data('item'),
+                quantity = item.val(),
+                price    = item.data('price'),
+                minimum  = item.data('minimum');
+
+            if (quantity >= minimum) {
+                var item_total = calculate_price(quantity, price);
+
+                item.val(quantity);
+                item.parent().parent().find('.line-total').html('$' + item_total);
+
+                update_items(id, quantity);
+            }
+        });
 
         function update_cart(id, quantity, description, price, minimum, min_desc) {
             var item_total  = calculate_price(quantity, price);
@@ -165,12 +182,20 @@ $categories = get_catering_posts();
                     });
                 } else {
                     order_table.find('tbody').append(
-                        '<tr><td>' + description + '</td><td>' + min_desc + '</td><td><input type="number" class="quantity" name="item[' + id + '][quantity]" min="' + minimum +'" data-price="' + price + '" data-item="' + id + '" value="' + quantity + '"> <button type="button" class="delete">Delete</button></td><td class="line-total">$' + item_total + '</td></tr>'
+                        '<tr>' +
+                            '<td>' + description + '</td>' +
+                            '<td>' + min_desc + '</td>' +
+                            '<td>' +
+                                '<input type="number" class="quantity" name="item[' + id + '][quantity]" min="' + minimum +'" data-minimum="' + minimum + '" data-price="' + price + '" data-item="' + id + '" value="' + quantity + '">&nbsp;' +
+                                '<button type="button" class="update">Update</button>' +
+                                '<button type="button" class="delete">Delete</button>' +
+                            '</td>' +
+                            '<td class="line-total">$' + item_total + '</td>' +
+                        '</tr>'
                     );
                 }
 
-                update_items(id, description, quantity, price);
-                update_total();
+                update_items(id, quantity, description, price);
             }
         }
 
@@ -192,7 +217,7 @@ $categories = get_catering_posts();
             return (quantity * price).toFixed(2);
         }
 
-        function update_items(id, description, quantity, price) {
+        function update_items(id, quantity, description, price) {
             var exists = item_exists(id);
 
             if (typeof exists !== 'undefined') {
@@ -205,6 +230,8 @@ $categories = get_catering_posts();
                     price:       price
                 });
             }
+
+            update_total();
         }
 
         function item_exists(id) {

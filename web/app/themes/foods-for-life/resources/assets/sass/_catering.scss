@@ -43,10 +43,11 @@
       color: $font-color-dark;
       padding: 10px 0 10px 15px;
       text-align: center;
-      width: 40%;
+      width: 30%;
     }
     
-    button.delete {
+    button.delete,
+    button.update {
       background: transparent;
       border: 0 none;
       text-decoration: underline;
