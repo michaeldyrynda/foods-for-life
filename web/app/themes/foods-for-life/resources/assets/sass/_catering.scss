@@ -1,4 +1,4 @@
-.et_boxed_layout #page-container .catering__form {
+.et_boxed_layout .catering__form {
   h1 {
     @include font-family-primary-bold();
 
@@ -7,59 +7,179 @@
     padding-bottom: 30px;
   }
 
-  h2 {
-    @include font-family-primary-bold();
-
-    color: $font-color-secondary;
-    font-size: 20px;
-    padding: 20px 0 5px 0;
-    text-transform: uppercase;
-  }
-
   p {
     color: $font-color-dark;
     padding-bottom: 0.2em;
   }
+}
 
-  .ninja-forms-all-fields-wrap {
-    padding: 30px;
+.et_boxed_layout #page-container .catering__menu {
+  background-color: #e3dacb;
+  padding-top: 0;
+
+  h2 {
+    @include font-family-primary-bold();
+
+    color: $font-color-secondary;
+    display: block;
+    font-size: 20px;
+    padding: 20px 0;
+    text-transform: uppercase;
+    width: 100%
+  }
+
+  .et_pb_row {
+    background-color: #f3ece1;
+    padding: 0 30px;
+  }
+
+  table.order {
+    background-color: #fbf8f4;
+    border-collapse: collapse;
+
+    input[type=number] {
+      background: transparent;
+      border: 1px solid #e3dacb;
+      color: $font-color-dark;
+      padding: 10px 0 10px 15px;
+      text-align: center;
+      width: 40%;
+    }
+    
+    button.delete {
+      background: transparent;
+      border: 0 none;
+      text-decoration: underline;
+      text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    thead {
+      background-color: #2e2823;
+      font-size: 14px;
+      text-transform: uppercase;
+
+      th {
+        color: #f3ece1;
+      }
+    }
+
+    tbody,
+    tfoot {
+      color: $font-color-dark;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #f3ece1;
+      }
+    }
   }
 
   .catering__menu-item {
     background-color: #fbf8f4;
     color: $font-color-dark;
-    display: inline-block;
+    display: block;
+    float: left;
     font-size: 11px;
-    padding: 20px 0;
-    height: 370px;
+    min-height: 420px;
+    margin: 0px 26px 26px 0;
+    position: relative;
+    width: 235px;
+
+    @media screen and (max-width: 479px) {
+      margin: 13px auto;
+      width: 100%;
+    }
+
+    &:nth-of-type(4n) {
+      margin-right: 0;
+    }
 
     h3 {
       @include font-family-primary-bold();
 
       color: $font-color-dark;
       font-size: 14px;
-      padding-left: 20px;
+      padding-bottom: 20px;
     }
 
-    > p {
-      line-height: 1.3em;
-      padding-bottom: 10px;
-      padding-left: 20px;
+    .item-description {
+      padding: 15px;
 
-      > em {
-        color: $font-color-secondary;
+      p {
+        color: $font-color-dark;
+        padding-bottom: 0.2em;
+      }
+
+      .serving {
+        font-style: italic;
+
+        .serving__title {
+          color: $font-color-secondary;
+        }
+
+        .serving__description {
+          color: $font-color-dark;
+        }
+      }
+
+      .price {
+        font-size: 14px;
+        padding-top: 15px;
+
+        .price__amount {
+          @include font-family-primary-bold();
+        }
+      }
+
+      .minimum {
+        .minimum__order {
+          font-style: italic;
+        }
+      }
+
+      .form__fields {
+        bottom: 15px;
+        left: 15px;
+        position: absolute;
+        width: 205px;
+
+        @media screen and (max-width: 479px) {
+          width: 234px;
+        }
+
+        input[type=number] {
+          background: transparent;
+          border: 1px solid #e3dacb;
+          color: $font-color-dark;
+          padding: 10px 0 10px 15px;
+          text-align: center;
+          width: 30%;
+        }
+
+        button {
+          @include font-family-primary-bold();
+
+          background-color: #e3dacb;
+          border: 0 none;
+          color: $font-color-dark;
+          font-size: 13px;
+          padding: 9px 26px 10px;
+          text-align: center;
+
+          @media screen and (max-width: 479px) {
+            padding: 9px 37px 10px;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
-
-    div {
-      position: relative;
-      top: -20px;
-
-      img {
-        height: auto;
-        min-width: 240px;
-      }
-    }
-
   }
 }
