@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e552df483408b01e1d5265fa788b4edf",
-    "content-hash": "d94b4b88aa1f32843477d7d854996511",
+    "hash": "f3c7c649272e379ffec5ac0fa6e329ff",
+    "content-hash": "abde7c28a325218d11c754789fc3091d",
     "packages": [
         {
             "name": "composer/installers",
@@ -240,26 +240,6 @@
                 "environment"
             ],
             "time": "2015-10-28 18:53:35"
-        },
-        {
-            "name": "wpackagist-plugin/ninja-forms",
-            "version": "2.9.28",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/2.9.28"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.2.9.28.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ninja-forms/"
         },
         {
             "name": "wpackagist-plugin/pro-categories-widget",
