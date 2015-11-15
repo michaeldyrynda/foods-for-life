@@ -92,3 +92,52 @@ MESSAGE;
 
     return $message;
 }
+
+
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40, 0);
+
+/**
+ * We have no need to add items to cart for now, so we override
+ * the default add-to-cart/simple template with an empty file.
+ */
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30, 0);
+
+add_action('woocommerce_before_main_content', 'specials_render_heading');
+add_action('woocommerce_after_single_product', 'specials_render_button');
+
+function specials_render_heading() {
+    print <<<HEADING
+<div class="et_pb_section et_pb_fullwidth_section page__heading specials et_pb_section_0 et_section_regular">
+    <section class="et_pb_fullwidth_header et_pb_module et_pb_bg_layout_light et_pb_text_align_left health-foods__heading et_pb_fullwidth_header_0">
+	    <div class="et_pb_fullwidth_header_container left">
+		    <div class="header-content-container center">
+			    <div class="header-content">
+				    <h1>Specials</h1>
+                </div>
+            </div>
+        </div>
+        <div class="et_pb_fullwidth_header_overlay"></div>
+        <div class="et_pb_fullwidth_header_scroll"></div>
+    </section>
+</div>
+HEADING;
+
+}
+
+function specials_render_contact() {
+    print <<<CONTACT
+<div class="specials__contact clearfix">
+    <span class="secondary">Visit us</span> at <strong>58A Gawler Place, Adelaide</strong> - <span class="secondary">Call us</span> on <strong>08 8227 1300</strong> to place a phone order.
+</div>
+CONTACT;
+}
+
+function specials_render_button() {
+    print <<<BUTTON
+<div class="et_pb_promo et_pb_module">
+    <a class="et_pb_promo_button et_pb_button" href="/specials">View all specials</a>
+</div>
+BUTTON;
+
+}
