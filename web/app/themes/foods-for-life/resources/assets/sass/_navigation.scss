@@ -1,3 +1,13 @@
 .nav li {
   line-height: 1.8em;
 }
+
+#top-menu li li a {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.nav ul li a:hover,
+.et_mobile_menu li a:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
