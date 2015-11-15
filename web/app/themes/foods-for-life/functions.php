@@ -13,15 +13,23 @@ function get_catering_posts() {
             $posts[$post_key]->custom_fields  = array();
 
             // Filter only the custom fields we need to render the page
-            foreach (get_post_custom($post->ID) as $custom_key => $custom_value) {
-                if (in_array($custom_key, array( 'price', 'price_portion', 'serving', 'minimum_order', ))) {
-                    $post->custom_fields[$custom_key] = array_shift($custom_value);
-                }
-            }
+            $post->custom_fields = get_catering_fields($post);
         }
 
         $categories[$category_key]->posts = $posts;
     }
 
     return $categories;
+}
+
+
+function get_catering_fields(&$post) {
+    $catering_fields = array();
+    foreach (get_post_custom($post->ID) as $custom_key => $custom_value) {
+        if (in_array($custom_key, array( 'price', 'price_portion', 'serving', 'minimum_order', ))) {
+            $catering_fields[$custom_key] = array_shift($custom_value);
+        }
+    }
+
+    return $catering_fields;
 }

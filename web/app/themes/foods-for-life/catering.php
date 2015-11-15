@@ -3,14 +3,56 @@
  * Template Name: Catering Form
  */
 
+// Handle form post
+if (isset($_POST['order_details'])) {
+    $errors = array();
+    parse_str($_POST['order_details'], $input);
+
+    // Validate items
+    foreach ($input['items'] as $item_id => $quantity) {
+        $post = get_post($item_id);
+        $post->custom_fields = get_catering_fields($post);
+
+        if (isset($post->custom_fields['minimum']) && ( $quantity < (int) $post->custom_fields['minimum'] )) {
+            $errors[] = printf('The minimum quantity for %s is %d.', $post->post_title, (int) $post->custom_fields['minimum']);
+        }
+    }
+
+    // Validate email
+    if (filter_var($input['order_email'], FILTER_VALIDATE_EMAIL) === false) {
+        $errors[] = sprintf('The specified email %s is invalid.', htmlspecialchars($input['order_email']));
+    }
+
+    // Validate order dat
+    if (! strtotime($input['order_delivery_date'])) {
+        $errors[] = 'The specified delivery date is invalid.';
+    } elseif (strtotime($input['order_delivery_date']) < time()) {
+        $errors[] = 'The specified delivery date is in the past.';
+    } elseif (strtotime($input['order_delivery_date']) < strtotime('+2 days')) {
+        $errors[] = 'For short notice catering, please call us on 08 8227 1300 and we can process your order over the phone.';
+    }
+
+    if (count($errors) > 0) {
+        print json_encode(array(
+            'success' => false,
+            'errors'  => $errors,
+        ));
+    } else {
+        print json_encode(array(
+            'success' => true,
+            'message' => 'The magic hath gathered',
+        ));
+    }
+
+    die();
+}
+
 get_header();
 
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 // Get all categories that are a child of the Catering category
 $categories = get_catering_posts();
-
-$order = array();
 
 ?>
 
@@ -24,8 +66,13 @@ $order = array();
                     <?php the_content(); ?>
 
                     <div class="et_pb_section catering__menu et_pb_section_99 et_pb_with_background et_section_regular">
-                        <form action="/catering/" method="post">
+                        <form action="/catering/" id="order-form" method="post">
                             <div class="et_pb_row et_pb_row_99 et_pb_row_4col">
+                                <div id="submit-message">
+                                    <span class="title"></span>
+                                    <span class="content"></span>
+                                </div>
+
                                 <table class="order">
                                     <col style="width: 45%;" />
                                     <col style="width: 20%;" />
@@ -57,21 +104,30 @@ $order = array();
                                 </table>
                             </div>
                             <div class="et_pb_row et_pb_row_100 et_pb_row_4col" id="order-details">
-                                <div class="et_pb_column et_pb_column_1_4">
-                                    <label for="order_name">Your Name</label>
-                                    <input id="order_name" name="order_name" type="text" value="<?= isset($order['name']) ? $order['name'] : null ?>" required>
+                                <div class="order_input_container clearfix">
+                                    <div class="order_input double">
+                                        <label for="order_name">Your Name</label>
+                                        <input id="order_name" name="order_name" type="text" required>
+                                    </div>
+                                    <div class="order_input">
+                                        <label for="order_phone">Your Contact Number</label>
+                                        <input id="order_phone" name="order_phone" type="text" required>
+                                    </div>
+                                    <div class="order_input">
+                                        <label for="order_email">Your Email Address</label>
+                                        <input id="order_email" name="order_email" type="text" required>
+                                    </div>
+                                    <div class="order_input double">
+                                        <label for="order_delivery">Your Delivery Address</label>
+                                        <input id="order_delivery" name="order_delivery" type="text" required>
+                                    </div>
+                                    <div class="order_input">
+                                        <label for="order_delivery_date">Delivery Date</label>
+                                        <input id="order_delivery_date" name="order_delivery_date" type="date" required">
+                                    </div>
                                 </div>
-                                <div class="et_pb_column et_pb_column_1_4">
-                                    <label for="order_phone">Your Contact Number</label>
-                                    <input id="order_phone" name="order_phone" type="text" value="<?= isset($order['phone']) ? $order['phone'] : null ?>" required>
-                                </div>
-                                <div class="et_pb_column et_pb_column_1_4">
-                                    <label for="order_email">Your Email Address</label>
-                                    <input id="order_email" name="order_email" type="text" value="<?= isset($order['email']) ? $order['email'] : null ?>" required>
-                                </div>
-                                <div class="et_pb_column et_pb_column_1_4">
-                                    <label for="order_delivery">Your Delivery Address</label>
-                                    <input id="order_delivery" name="order_delivery" type="text" value="<?= isset($order['delivery']) ? $order['delivery'] : null ?>" required>
+                                <div class="et_pb_promo et_pb_module">
+                                    <button class="et_pb_promo_button et_pb_button" id="submit-order" type="button" disabled>Confirm Order</button>
                                 </div>
                             </div>
                         </form>
@@ -130,7 +186,7 @@ $order = array();
         var order_total = 0,
             items = []; // array of objects
 
-        set_order_total(order_total);
+        set_order_total();
 
         $('.form__fields button').click(function (e) {
             var item = $(this).parent().find('.order_item');
@@ -184,12 +240,12 @@ $order = array();
         });
 
         $('table.order .quantity').live('change', function (e) {
-            var item     = $(this),
-                id       = item.data('item'),
+            var item = $(this),
+                id = item.data('item'),
                 quantity = item.val(),
-                price    = item.data('price'),
-                minimum  = item.data('minimum'),
-                row      = item.parent().parent();
+                price = item.data('price'),
+                minimum = item.data('minimum'),
+                row = item.parent().parent();
 
             if (quantity >= minimum) {
                 var item_total = calculate_price(quantity, price);
@@ -200,8 +256,82 @@ $order = array();
                 row.remove();
                 remove_item(id);
             }
+        });
 
-        })
+        $('#order-details .order_input > input[required]').keyup(function () {
+            var filled = true;
+
+            $('#order-details .order_input > input[required]').each (function () {
+                if ($(this).val() == '') {
+                    filled = false;
+                }
+            });
+
+            if (filled) {
+                $('#submit-order').removeAttr('disabled');
+            } else {
+                $('#submit-order').attr('disabled', 'disabled');
+            }
+        });
+
+        $('#submit-order').click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var form = $('#order-form'),
+                url  = form.attr('action');
+
+            $.ajax({
+                method: 'POST',
+                url: url,
+                data: { order_details: form.serialize() },
+                dataType: 'json',
+                beforeSend: function () {
+                    $('#submit-message').hide();
+                    $('#submit-message').removeClass('error');
+                    $('#submit-message').removeClass('success');
+                    $('#submit-message .title').html('');
+                    $('#submit-message .content').html('');
+                },
+                success: function (data) {
+                    if (data.success) {
+                        $('#submit-message').addClass('success');
+                        $('#submit-message .title').html('Your order was submitted!')
+                        $('#submit-message .content').html('We will be in contact with you to confirm your order and process payment shortly.')
+
+                        items = [];
+
+                        $('table.order .order_item').each(function () {
+                            $(this).remove();
+                        });
+
+                        $('#order-details input').each(function () {
+                            $(this).val('');
+                        });
+
+                        $('.order_item[type=number]').each(function () {
+                            $(this).val('');
+                        });
+
+                        $('#no-items').show();
+                        $('#order-details').hide();
+                        update_total();
+                    } else {
+                        $('#submit-message').addClass('error');
+                        $('#submit-message .title').html('Please check your input and try again');
+                        $('#submit-message .content').html('<ul id="submit-errors"></ul>');
+
+                        for (var i = 0; i < data.errors.length; i++) {
+                            $('#submit-message .content #submit-errors').append(
+                                '<li>' + data.errors[i] + '</li>'
+                            );
+                        }
+                    }
+
+                    $('#submit-message').show();
+                }
+            });
+        });
 
         function update_cart(id, quantity, description, price, minimum, min_desc) {
             var item_total  = calculate_price(quantity, price);
@@ -226,11 +356,11 @@ $order = array();
                     });
                 } else {
                     order_table.find('tbody').append(
-                        '<tr>' +
+                        '<tr class="order_item">' +
                             '<td>' + description + '</td>' +
                             '<td>' + min_desc + '</td>' +
                             '<td>' +
-                                '<input type="number" class="quantity" name="item[' + id + '][quantity]" min="' + minimum +'" data-minimum="' + minimum + '" data-price="' + price + '" data-item="' + id + '" value="' + quantity + '">&nbsp;' +
+                                '<input type="number" class="quantity" name="items[' + id + ']" min="' + minimum +'" data-minimum="' + minimum + '" data-price="' + price + '" data-item="' + id + '" value="' + quantity + '">&nbsp;' +
                                 '<button type="button" class="update">Update</button>' +
                                 '<button type="button" class="delete">Delete</button>' +
                             '</td>' +

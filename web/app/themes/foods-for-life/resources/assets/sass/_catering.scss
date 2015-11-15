@@ -13,6 +13,86 @@
   }
 }
 
+form {
+  .order_input {
+    display: block;
+    float: left;
+    margin-right: 15px;
+    width: 231px;
+
+    &.double {
+      width: 462px;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: 479px) {
+      margin-right: 0;
+      width: 100%;
+    }
+
+    label {
+      @include font-family-primary-bold();
+
+      color: $font-color-dark;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type=text],
+    input[type=date] {
+      background: transparent;
+      border: 1px solid #e3dacb;
+      color: $font-color-dark;
+      display: block;
+      padding: 10px 0 10px 15px;
+      width: 100%;
+    }
+  }
+
+  #order-details {
+    display: none;
+
+    .order_input_container {
+      background-color: #fbf8f4;
+      padding: 20px 24px;
+    }
+
+    .et_pb_promo {
+      background-color: #fbf8f4;
+      padding: 20px 60px 40px;
+    }
+
+    .et_pb_promo_button.et_pb_button {
+      @include font-family-primary-bold();
+
+      color: $font-color-secondary;
+      font-size: 14px;
+      line-height: 1.8em !important;
+      text-transform: uppercase;
+
+      &:hover {
+        border-color: $font-color-secondary;
+        cursor: pointer;
+      }
+
+      &:after {
+        line-height: 0.8;
+      }
+
+      &:disabled,
+      &:disabled:hover,
+      &[disabled],
+      &[disabled]:hover {
+        border-color: lighten($font-color-dark, 50%);
+        color: lighten($font-color-dark, 50%);
+      }
+    }
+  }
+}
+
 .et_boxed_layout #page-container .catering__menu {
   background-color: #e3dacb;
   padding-top: 0;
@@ -33,9 +113,38 @@
     padding: 0 30px;
   }
 
+  #submit-message {
+    border-radius: 4px;
+    display: none;
+    margin: 0 0 20px;
+    padding: 20px 20px 0;
+    width: 100%;
+
+    &.success {
+      background-color: #dff0d8;
+      border-color: #d6e9c6;
+      color: #3c763d;
+      padding-bottom: 20px;
+    }
+
+    &.error {
+      background-color: #f2dede;
+      border-color: #ebccd1;
+      color: #a94442;
+    }
+
+    .title {
+      display: block;
+      font-weight: bold;
+    }
+  }
+
   table.order {
     background-color: #fbf8f4;
+    border: 1px;
     border-collapse: collapse;
+    margin: 0;
+    padding: 0;
 
     input[type=number] {
       background: transparent;
