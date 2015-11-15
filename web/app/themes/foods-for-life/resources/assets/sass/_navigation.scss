@@ -11,3 +11,87 @@
 .et_mobile_menu li a:hover {
   background-color: rgba(0, 0, 0, 0.09);
 }
+
+@media (min-width: 981px) {
+  .et_vertical_nav #main-header .container {
+    margin: 0 30px;
+  }
+}
+
+#et-top-navigation .ffl-contact {
+  display: none;
+}
+
+@media screen and (min-width: 981px) {
+  #et-top-navigation {
+    .ffl-contact {
+      display: block;
+
+      .phone {
+        border-bottom: 1px solid #d2c9ba;
+        border-top: 1px solid #d2c9ba;
+        color: #562700;
+        display: block;
+        font-size: 20px;
+        margin-bottom: 10px;
+        padding: 15px 0;
+        text-align: center;
+
+        img {
+          vertical-align: middle;
+          padding-right: 10px;
+        }
+      }
+
+      .catering {
+        border-bottom: 1px solid #d2c9ba;
+        padding-bottom: 15px;
+        text-align: center;
+
+        strong {
+          color: #562700;
+          display: block;
+          font-size: 11px;
+          margin-bottom: 15px;
+        }
+
+        img {
+          vertical-align: middle;
+          padding-right: 10px;
+        }
+
+        a {
+          background-color: #e3dacb;
+          border-radius: 4px;
+          color: #562700;
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+      }
+
+      .opening {
+        padding-top: 20px;
+        h1 {
+          @include font-family-primary-bold();
+
+          color: $font-color-secondary;
+          font-size: 20px;
+          text-transform: uppercase;
+        }
+
+        address {
+          color: #562700;
+          font-size: 11px;
+          font-style: normal;
+          line-height: 14px;
+
+          a {
+            color: #562700;
+            font-size: 10px;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

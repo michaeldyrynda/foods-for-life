@@ -84,6 +84,64 @@ body {
 .et_mobile_menu li a:hover {
   background-color: rgba(0, 0, 0, 0.09); }
 
+@media (min-width: 981px) {
+  .et_vertical_nav #main-header .container {
+    margin: 0 30px; } }
+
+#et-top-navigation .ffl-contact {
+  display: none; }
+
+@media screen and (min-width: 981px) {
+  #et-top-navigation .ffl-contact {
+    display: block; }
+    #et-top-navigation .ffl-contact .phone {
+      border-bottom: 1px solid #d2c9ba;
+      border-top: 1px solid #d2c9ba;
+      color: #562700;
+      display: block;
+      font-size: 20px;
+      margin-bottom: 10px;
+      padding: 15px 0;
+      text-align: center; }
+      #et-top-navigation .ffl-contact .phone img {
+        vertical-align: middle;
+        padding-right: 10px; }
+    #et-top-navigation .ffl-contact .catering {
+      border-bottom: 1px solid #d2c9ba;
+      padding-bottom: 15px;
+      text-align: center; }
+      #et-top-navigation .ffl-contact .catering strong {
+        color: #562700;
+        display: block;
+        font-size: 11px;
+        margin-bottom: 15px; }
+      #et-top-navigation .ffl-contact .catering img {
+        vertical-align: middle;
+        padding-right: 10px; }
+      #et-top-navigation .ffl-contact .catering a {
+        background-color: #e3dacb;
+        border-radius: 4px;
+        color: #562700;
+        font-size: 10px;
+        padding: 5px 10px; }
+    #et-top-navigation .ffl-contact .opening {
+      padding-top: 20px; }
+      #et-top-navigation .ffl-contact .opening h1 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        color: #a61f14;
+        font-size: 20px;
+        text-transform: uppercase; }
+      #et-top-navigation .ffl-contact .opening address {
+        color: #562700;
+        font-size: 11px;
+        font-style: normal;
+        line-height: 14px; }
+        #et-top-navigation .ffl-contact .opening address a {
+          color: #562700;
+          font-size: 10px;
+          text-decoration: underline; } }
+
 /** Slider */
 .et_boxed_layout #page-container .home__slider {
   padding: 0; }
