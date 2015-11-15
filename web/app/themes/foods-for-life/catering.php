@@ -10,6 +10,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 // Get all categories that are a child of the Catering category
 $categories = get_catering_posts();
 
+$order = array();
+
 ?>
 
 <div id="main-content" xmlns="http://www.w3.org/1999/html">
@@ -22,37 +24,57 @@ $categories = get_catering_posts();
                     <?php the_content(); ?>
 
                     <div class="et_pb_section catering__menu et_pb_section_99 et_pb_with_background et_section_regular">
-                        <div class="et_pb_row et_pb_row_99 et_pb_row_4col">
-                            <table class="order">
-                                <col style="width: 45%;" />
-                                <col style="width: 20%;" />
-                                <col style="width: 25%;" />
-                                <col style="width: 10%;" />
-                                <thead>
-                                <tr>
-                                    <th>Item</th>
-                                    <th>Minimum Order</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr id="no-items">
-                                    <td colspan="4">There are currently no items in your order</td>
-                                </tr>
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <td colspan="2" class="terms">
-                                        <strong>FREE DELIVERY</strong> <em>on every order of $100.00 or more (Adelaide CBD Only).<br />
-                                            Delivery charges will apply on orders under $100.00 and/or delivery outside the CBD square mile. Pick-up is also available.</em>
-                                    </td>
-                                    <td><strong>Total</strong> <em>inc. GST</em></td>
-                                    <th>$<span id="order-total"></span></th>
-                                </tr>
-                                </tfoot>
-                            </table>
-                        </div>
+                        <form action="/catering/" method="post">
+                            <div class="et_pb_row et_pb_row_99 et_pb_row_4col">
+                                <table class="order">
+                                    <col style="width: 45%;" />
+                                    <col style="width: 20%;" />
+                                    <col style="width: 25%;" />
+                                    <col style="width: 10%;" />
+                                    <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Minimum Order</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr id="no-items">
+                                        <td colspan="4">There are currently no items in your order</td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="2" class="terms">
+                                            <strong>FREE DELIVERY</strong> <em>on every order of $100.00 or more (Adelaide CBD Only).<br />
+                                                Delivery charges will apply on orders under $100.00 and/or delivery outside the CBD square mile. Pick-up is also available.</em>
+                                        </td>
+                                        <td><strong>Total</strong> <em>inc. GST</em></td>
+                                        <th>$<span id="order-total"></span></th>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="et_pb_row et_pb_row_100 et_pb_row_4col" id="order-details">
+                                <div class="et_pb_column et_pb_column_1_4">
+                                    <label for="order_name">Your Name</label>
+                                    <input id="order_name" name="order_name" type="text" value="<?= isset($order['name']) ? $order['name'] : null ?>" required>
+                                </div>
+                                <div class="et_pb_column et_pb_column_1_4">
+                                    <label for="order_phone">Your Contact Number</label>
+                                    <input id="order_phone" name="order_phone" type="text" value="<?= isset($order['phone']) ? $order['phone'] : null ?>" required>
+                                </div>
+                                <div class="et_pb_column et_pb_column_1_4">
+                                    <label for="order_email">Your Email Address</label>
+                                    <input id="order_email" name="order_email" type="text" value="<?= isset($order['email']) ? $order['email'] : null ?>" required>
+                                </div>
+                                <div class="et_pb_column et_pb_column_1_4">
+                                    <label for="order_delivery">Your Delivery Address</label>
+                                    <input id="order_delivery" name="order_delivery" type="text" value="<?= isset($order['delivery']) ? $order['delivery'] : null ?>" required>
+                                </div>
+                            </div>
+                        </form>
 
                         <?php foreach ($categories as $category): ?>
                             <div class="et_pb_row et_pb_row_99 et_pb_row_4col">
@@ -138,6 +160,7 @@ $categories = get_catering_posts();
 
             if (items.length == 0) {
                 $('#no-items').show();
+                $('#order-details').hide();
             }
         });
 
@@ -160,6 +183,26 @@ $categories = get_catering_posts();
             }
         });
 
+        $('table.order .quantity').live('change', function (e) {
+            var item     = $(this),
+                id       = item.data('item'),
+                quantity = item.val(),
+                price    = item.data('price'),
+                minimum  = item.data('minimum'),
+                row      = item.parent().parent();
+
+            if (quantity >= minimum) {
+                var item_total = calculate_price(quantity, price);
+
+                row.find('.line-total').html('$' + item_total);
+                update_items(id, quantity);
+            } else {
+                row.remove();
+                remove_item(id);
+            }
+
+        })
+
         function update_cart(id, quantity, description, price, minimum, min_desc) {
             var item_total  = calculate_price(quantity, price);
             var order_table = $('table.order');
@@ -167,6 +210,7 @@ $categories = get_catering_posts();
             if (quantity >= minimum) {
                 if (items.length == 0) {
                     $('#no-items').hide();
+                    $('#order-details').show();
                 }
 
                 var exists = item_exists(id);
