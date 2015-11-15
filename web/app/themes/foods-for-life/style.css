@@ -710,10 +710,26 @@ form #order-details .et_pb_promo_button.et_pb_button {
       font-size: 20px !important; }
 
 /** End product page */
+/** Product archive (category listing) page */
+.archive #main-content {
+  background-color: #e3dacb; }
+  .archive #main-content h1.page-title {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #a61f14;
+    font-size: 24px; }
+
+/** End product archive (category listing) page */
 /** Generic WooCommerce overrides */
 .woocommerce span.onsale,
 .woocommerce-page span.onsale {
   display: none; }
+
+.woocommerce-info {
+  color: #2e2823 !important; }
+
+.woocommerce .woocommerce-info {
+  background-color: #f3ece1; }
 
 .product_meta {
   border: 0 none; }
