@@ -92,8 +92,6 @@
                     if ( '' !== $et_secondary_nav ) {
                         echo $et_secondary_nav;
                     }
-
-                    et_show_cart_total();
                     ?>
                 </div> <!-- #et-secondary-menu -->
 
@@ -139,6 +137,24 @@
                     endif;
                     ?>
                 </nav>
+
+                <div class="ffl-contact">
+                    <div class="phone">
+                        <img src="<?= get_stylesheet_directory_uri() ?>/img/icon_phone.png" />08 8227 1300
+                    </div>
+                    <div class="catering">
+                        <strong>Healthy catering made easy!</strong>
+                        <img src="<?= get_stylesheet_directory_uri() ?>/img/klosh.png" /> <a href="/catering">Order Online Now</a>
+                    </div>
+                    <div class="opening">
+                        <h1>Open 7 Days</h1>
+                        <address>
+                            58A, Gawler Place<br />
+                            Adelaide, SA 5000<br />
+                            <small><a href="https://goo.gl/maps/rptUhypNLmS2" target="_blank">View Map</a></small>
+                        </address>
+                    </div>
+                </div.
 
                 <?php
                 if ( ! $et_top_info_defined ) {
