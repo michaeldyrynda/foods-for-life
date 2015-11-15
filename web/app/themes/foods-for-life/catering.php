@@ -5,16 +5,27 @@
 
 // Handle form post
 if (isset($_POST['order_details'])) {
-    $errors = array();
+    $errors = $items = array();
     parse_str($_POST['order_details'], $input);
 
     // Validate items
-    foreach ($input['items'] as $item_id => $quantity) {
-        $post = get_post($item_id);
-        $post->custom_fields = get_catering_fields($post);
+    if (! isset($input['items']) || count($input['items']) == 0) {
+        $errors[] = 'You have not specified any items in your order';
+    } else {
+        foreach ($input['items'] as $item_id => $quantity) {
+            $post = get_post($item_id);
+            $post->custom_fields = get_catering_fields($post);
 
-        if (isset($post->custom_fields['minimum']) && ( $quantity < (int) $post->custom_fields['minimum'] )) {
-            $errors[] = printf('The minimum quantity for %s is %d.', $post->post_title, (int) $post->custom_fields['minimum']);
+            if (isset($post->custom_fields['minimum']) && ( $quantity < (int) $post->custom_fields['minimum'] )) {
+                $errors[] = printf('The minimum quantity for %s is %d.', $post->post_title, (int) $post->custom_fields['minimum']);
+            }
+
+            $items[] = array(
+                'description' => $post->post_title,
+                'quantity'    => $quantity,
+                'price'       => $post->custom_fields['price'],
+                'line_total'  => number_format($quantity * $post->custom_fields['price'], 2),
+            );
         }
     }
 
@@ -23,7 +34,7 @@ if (isset($_POST['order_details'])) {
         $errors[] = sprintf('The specified email %s is invalid.', htmlspecialchars($input['order_email']));
     }
 
-    // Validate order dat
+    // Validate order date
     if (! strtotime($input['order_delivery_date'])) {
         $errors[] = 'The specified delivery date is invalid.';
     } elseif (strtotime($input['order_delivery_date']) < time()) {
@@ -38,10 +49,23 @@ if (isset($_POST['order_details'])) {
             'errors'  => $errors,
         ));
     } else {
-        print json_encode(array(
-            'success' => true,
-            'message' => 'The magic hath gathered',
-        ));
+        if (getenv('ORDER_FORM_RECIPIENT')) {
+            $message = get_order_email($input, $items);
+
+            mail(
+                getenv('ORDER_FORM_RECIPIENT'),
+                '[FFL Website] Catering Order Received',
+                $message,
+                join(PHP_EOL, array(
+                    'From: ' . getenv('ORDER_FORM_RECIPIENT'),
+                    'Reply-To: ' . getenv('ORDER_FORM_RECIPIENT'),
+                    'Return-Path: ' . getenv('ORDER_FORM_RECIPIENT'),
+                    'CC: ' . $input['order_email'],
+                ))
+            );
+        }
+
+        print json_encode(array( 'success' => true, ));
     }
 
     die();
@@ -313,6 +337,7 @@ $categories = get_catering_posts();
                         });
 
                         $('#no-items').show();
+                        $('#submit-order').attr('disabled', 'disabled');
                         update_total();
                     } else {
                         $('#submit-message').addClass('error');
