@@ -1,0 +1,41 @@
+@mixin font-family-primary-regular() {
+  font-family: $font-family-primary;
+}
+
+@mixin font-family-primary-bold() {
+  @include font-family-primary-regular();
+  font-weight: 700;
+}
+
+@mixin font-family-primary-semibold() {
+  @include font-family-primary-regular();
+  font-weight: 600;
+}
+
+@mixin primary-button($color: $font-color-primary) {
+  @include font-family-primary-bold();
+
+  border-color: $color;
+  color: $color;
+  font-size: 14px;
+  margin-top: 29px;
+  padding: 0.5em 2.2em;
+  text-transform: uppercase;
+
+  &:after {
+    line-height: 0.7;
+  }
+}
+
+@mixin heading($color: $font-color-primary) {
+  @include font-family-primary-bold();
+
+  color: $color !important;
+  font-size: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+@mixin heading-uppercase($color: $font-color-primary) {
+  text-transform: uppercase;
+}

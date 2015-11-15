@@ -1,0 +1,30 @@
+#main-footer .footer-widget {
+  .textwidget {
+    font-size: 14px;
+  }
+
+  h4.title {
+    @include font-family-primary-bold();
+
+    color: $font-color-primary !important;
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  &:first-child h4.title {
+    border-top: 1px solid $font-color-primary;
+    padding-top: 15px;
+  }
+}
+
+#footer-widgets .footer-widget li {
+  padding-left: 0px;
+
+  &:before {
+    border: 0 none;
+  }
+}
+
+#footer-widgets .footer-widget #menu-cafe-catering-specials li:nth-child(-n+2) a {
+  font-weight: bold;
+}

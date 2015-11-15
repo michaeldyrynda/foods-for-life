@@ -1,0 +1,54 @@
+.cafe__heading__dark,
+.cafe__heading__light {
+  font-size: 30px;
+}
+
+.cafe__heading__dark {
+  @include heading($font-color-dark);
+}
+
+.cafe__heading__light {
+  @include heading($font-color-primary);
+}
+
+.cafe__text__dark,
+.cafe__text__light {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.cafe__text__dark {
+  color: $font-color-dark;
+}
+
+.cafe__text__light {
+  color: $font-color-primary;
+}
+
+.et_boxed_layout #page-container .cafe__menu__group .et_pb_row {
+  margin: 0;
+  width: 100%;
+
+  .et_pb_column {
+    margin: 0;
+    width: 50%;
+  }
+}
+
+.et_boxed_layout #page-container .cafe__cta {
+  .et_pb_promo_description {
+    h2 {
+      @include font-family-primary-bold();
+
+      color: $font-color-secondary;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: $font-color-dark;
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+  }
+}

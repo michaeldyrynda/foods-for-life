@@ -1,0 +1,293 @@
+.et_boxed_layout .catering__form {
+  h1 {
+    @include font-family-primary-bold();
+
+    color: $font-color-secondary;
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
+  p {
+    color: $font-color-dark;
+    padding-bottom: 0.2em;
+  }
+}
+
+form {
+  .order_input {
+    display: block;
+    float: left;
+    margin-right: 15px;
+    width: 231px;
+
+    &.double {
+      width: 462px;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: 479px) {
+      margin-right: 0;
+      width: 100%;
+    }
+
+    label {
+      @include font-family-primary-bold();
+
+      color: $font-color-dark;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type=text],
+    input[type=date] {
+      background: transparent;
+      border: 1px solid #e3dacb;
+      color: $font-color-dark;
+      display: block;
+      padding: 10px 0 10px 15px;
+      width: 100%;
+    }
+  }
+
+  #order-details {
+    .order_input_container {
+      background-color: #fbf8f4;
+      padding: 20px 24px;
+    }
+
+    .et_pb_promo {
+      background-color: #fbf8f4;
+      padding: 20px 60px 40px;
+    }
+
+    .et_pb_promo_button.et_pb_button {
+      @include font-family-primary-bold();
+
+      color: $font-color-secondary;
+      font-size: 14px;
+      line-height: 1.8em !important;
+      text-transform: uppercase;
+
+      &:hover {
+        border-color: $font-color-secondary;
+        cursor: pointer;
+      }
+
+      &:after {
+        line-height: 0.8;
+      }
+
+      &:disabled,
+      &:disabled:hover,
+      &[disabled],
+      &[disabled]:hover {
+        border-color: lighten($font-color-dark, 50%);
+        color: lighten($font-color-dark, 50%);
+      }
+    }
+  }
+}
+
+.et_boxed_layout #page-container .catering__menu {
+  background-color: #e3dacb;
+  padding-top: 0;
+
+  h2 {
+    @include font-family-primary-bold();
+
+    color: $font-color-secondary;
+    display: block;
+    font-size: 20px;
+    padding: 20px 0;
+    text-transform: uppercase;
+    width: 100%
+  }
+
+  .et_pb_row {
+    background-color: #f3ece1;
+    padding: 0 30px;
+  }
+
+  #submit-message {
+    border-radius: 4px;
+    display: none;
+    margin: 0 0 20px;
+    padding: 20px 20px 0;
+    width: 100%;
+
+    &.success {
+      background-color: #dff0d8;
+      border-color: #d6e9c6;
+      color: #3c763d;
+      padding-bottom: 20px;
+    }
+
+    &.error {
+      background-color: #f2dede;
+      border-color: #ebccd1;
+      color: #a94442;
+    }
+
+    .title {
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+  table.order {
+    background-color: #fbf8f4;
+    border: 1px;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+
+    input[type=number] {
+      background: transparent;
+      border: 1px solid #e3dacb;
+      color: $font-color-dark;
+      padding: 10px 0 10px 15px;
+      text-align: center;
+      width: 30%;
+    }
+    
+    button.delete,
+    button.update {
+      background: transparent;
+      border: 0 none;
+      text-decoration: underline;
+      text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    thead {
+      background-color: #2e2823;
+      font-size: 14px;
+      text-transform: uppercase;
+
+      th {
+        color: #f3ece1;
+      }
+    }
+
+    tbody,
+    tfoot {
+      color: $font-color-dark;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #f3ece1;
+      }
+    }
+  }
+
+  .catering__menu-item {
+    background-color: #fbf8f4;
+    color: $font-color-dark;
+    display: block;
+    float: left;
+    font-size: 11px;
+    min-height: 420px;
+    margin: 0px 26px 26px 0;
+    position: relative;
+    width: 235px;
+
+    @media screen and (max-width: 479px) {
+      margin: 13px auto;
+      width: 100%;
+    }
+
+    &:nth-of-type(4n) {
+      margin-right: 0;
+    }
+
+    h3 {
+      @include font-family-primary-bold();
+
+      color: $font-color-dark;
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
+
+    .item-description {
+      padding: 15px;
+
+      p {
+        color: $font-color-dark;
+        padding-bottom: 0.2em;
+      }
+
+      .serving {
+        font-style: italic;
+
+        .serving__title {
+          color: $font-color-secondary;
+        }
+
+        .serving__description {
+          color: $font-color-dark;
+        }
+      }
+
+      .price {
+        font-size: 14px;
+        padding-top: 15px;
+
+        .price__amount {
+          @include font-family-primary-bold();
+        }
+      }
+
+      .minimum {
+        .minimum__order {
+          font-style: italic;
+        }
+      }
+
+      .form__fields {
+        bottom: 15px;
+        left: 15px;
+        position: absolute;
+        width: 205px;
+
+        @media screen and (max-width: 479px) {
+          width: 234px;
+        }
+
+        input[type=number] {
+          background: transparent;
+          border: 1px solid #e3dacb;
+          color: $font-color-dark;
+          padding: 10px 0 10px 15px;
+          text-align: center;
+          width: 30%;
+        }
+
+        button {
+          @include font-family-primary-bold();
+
+          background-color: #e3dacb;
+          border: 0 none;
+          color: $font-color-dark;
+          font-size: 13px;
+          padding: 9px 26px 10px;
+          text-align: center;
+
+          @media screen and (max-width: 479px) {
+            padding: 9px 37px 10px;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

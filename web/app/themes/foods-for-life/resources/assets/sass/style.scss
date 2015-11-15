@@ -1,0 +1,27 @@
+/*
+ * Theme Name:  Foods For Life
+ * Description: Foods For Life
+ * Author:      Michael Dyrynda <michael@iatstuti.net>
+ * Author URI:  https://iatstuti.net
+ * Template:    Divi
+ * Version:     1.0.0
+ */
+@import url("../Divi/style.css");
+
+@import "variables";
+@import "mixins";
+
+body {
+  background-color: $site-background-color;
+}
+
+@import "typography";
+@import "footer";
+@import "navigation";
+
+@import "home";
+@import "cafe";
+@import "health_foods";
+@import "news";
+@import "ffl_single_post";
+@import "catering";

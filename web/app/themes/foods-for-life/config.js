@@ -1,0 +1,6 @@
+{
+    publicPath: "./",
+    css: {
+        "outputFolder": "./"
+    }
+}
