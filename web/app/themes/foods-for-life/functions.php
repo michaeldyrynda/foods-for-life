@@ -1,5 +1,23 @@
 <?php
 
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40, 0);
+
+/**
+ * We have no need to add items to cart for now, so we override
+ * the default add-to-cart/simple template with an empty file.
+ */
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30, 0);
+
+add_action('woocommerce_before_main_content', 'specials_render_heading');
+add_action('woocommerce_after_single_product', 'specials_render_button');
+
+add_shortcode('page_title', 'page_title');
+
+function page_title() {
+    return get_the_title();
+}
+
 function get_catering_posts() {
     $categories = get_categories(array( 'child_of' => 16, ));
 
@@ -93,18 +111,6 @@ MESSAGE;
     return $message;
 }
 
-
-remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40, 0);
-
-/**
- * We have no need to add items to cart for now, so we override
- * the default add-to-cart/simple template with an empty file.
- */
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30, 0);
-
-add_action('woocommerce_before_main_content', 'specials_render_heading');
-add_action('woocommerce_after_single_product', 'specials_render_button');
 
 function specials_render_heading() {
     print <<<HEADING
