@@ -76,6 +76,7 @@ body {
 .nav li {
   line-height: 1.8em; }
 
+.et-fixed-header #top-menu li li a,
 #top-menu li li a {
   font-size: 14px;
   font-weight: normal; }
