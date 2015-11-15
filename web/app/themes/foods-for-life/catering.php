@@ -216,7 +216,6 @@ $categories = get_catering_posts();
 
             if (items.length == 0) {
                 $('#no-items').show();
-                $('#order-details').hide();
             }
         });
 
@@ -314,7 +313,6 @@ $categories = get_catering_posts();
                         });
 
                         $('#no-items').show();
-                        $('#order-details').hide();
                         update_total();
                     } else {
                         $('#submit-message').addClass('error');
@@ -340,7 +338,6 @@ $categories = get_catering_posts();
             if (quantity >= minimum) {
                 if (items.length == 0) {
                     $('#no-items').hide();
-                    $('#order-details').show();
                 }
 
                 var exists = item_exists(id);

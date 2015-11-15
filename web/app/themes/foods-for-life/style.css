@@ -446,29 +446,29 @@ form .order_input {
     padding: 10px 0 10px 15px;
     width: 100%; }
 
-form #order-details {
-  display: none; }
-  form #order-details .order_input_container {
-    background-color: #fbf8f4;
-    padding: 20px 24px; }
-  form #order-details .et_pb_promo {
-    background-color: #fbf8f4;
-    padding: 20px 60px 40px; }
-  form #order-details .et_pb_promo_button.et_pb_button {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 700;
-    color: #a61f14;
-    font-size: 14px;
-    line-height: 1.8em !important;
-    text-transform: uppercase; }
-    form #order-details .et_pb_promo_button.et_pb_button:hover {
-      border-color: #a61f14;
-      cursor: pointer; }
-    form #order-details .et_pb_promo_button.et_pb_button:after {
-      line-height: 0.8; }
-    form #order-details .et_pb_promo_button.et_pb_button:disabled, form #order-details .et_pb_promo_button.et_pb_button:disabled:hover, form #order-details .et_pb_promo_button.et_pb_button[disabled], form #order-details .et_pb_promo_button.et_pb_button[disabled]:hover {
-      border-color: #b4a79c;
-      color: #b4a79c; }
+form #order-details .order_input_container {
+  background-color: #fbf8f4;
+  padding: 20px 24px; }
+
+form #order-details .et_pb_promo {
+  background-color: #fbf8f4;
+  padding: 20px 60px 40px; }
+
+form #order-details .et_pb_promo_button.et_pb_button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #a61f14;
+  font-size: 14px;
+  line-height: 1.8em !important;
+  text-transform: uppercase; }
+  form #order-details .et_pb_promo_button.et_pb_button:hover {
+    border-color: #a61f14;
+    cursor: pointer; }
+  form #order-details .et_pb_promo_button.et_pb_button:after {
+    line-height: 0.8; }
+  form #order-details .et_pb_promo_button.et_pb_button:disabled, form #order-details .et_pb_promo_button.et_pb_button:disabled:hover, form #order-details .et_pb_promo_button.et_pb_button[disabled], form #order-details .et_pb_promo_button.et_pb_button[disabled]:hover {
+    border-color: #b4a79c;
+    color: #b4a79c; }
 
 .et_boxed_layout #page-container .catering__menu {
   background-color: #e3dacb;
