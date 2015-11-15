@@ -154,7 +154,7 @@
                             <small><a href="https://goo.gl/maps/rptUhypNLmS2" target="_blank">View Map</a></small>
                         </address>
                     </div>
-                </div.
+                </div>
 
                 <?php
                 if ( ! $et_top_info_defined ) {
