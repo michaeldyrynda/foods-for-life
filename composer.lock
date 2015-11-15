@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f3c7c649272e379ffec5ac0fa6e329ff",
-    "content-hash": "abde7c28a325218d11c754789fc3091d",
+    "hash": "3c7f27da23f5921bb768f03306c48f4c",
+    "content-hash": "2e3ce1a19210fc15f7da18cea8ee2b0f",
     "packages": [
         {
             "name": "composer/installers",
@@ -260,6 +260,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/pro-categories-widget/"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce",
+            "version": "2.4.10",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/woocommerce/",
+                "reference": "tags/2.4.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce.2.4.10.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce/"
         }
     ],
     "packages-dev": [],
