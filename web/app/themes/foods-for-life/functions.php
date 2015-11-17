@@ -17,7 +17,8 @@ function get_catering_posts() {
 
     // For each category in the catering category, fetch its posts
     foreach ($categories as $category_key => $category) {
-        $posts = get_posts(array( 'category' => $category->cat_ID, ));
+        // Ensure that we return all posts for this category
+        $posts = get_posts(array( 'category' => $category->cat_ID, 'posts_per_page' => -1 ));
 
         // For each post, fetch its custom fields
         foreach ($posts as $post_key => $post) {
