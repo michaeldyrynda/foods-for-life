@@ -187,20 +187,7 @@
   }
 
   .et_pb_promo_button.et_pb_button {
-    @include font-family-primary-bold();
-
-    border-color: $font-color-dark;
-    color: $font-color-dark;
-    font-size: 14px;
-    text-transform: uppercase;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    &:after {
-      line-height: 0.7;
-    }
+    @include ffl-button($font-color-dark);
   }
 }
 /** End generic WooCommerce overrides */

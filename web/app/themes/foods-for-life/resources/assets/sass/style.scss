@@ -15,6 +15,10 @@ body {
   background-color: $site-background-color;
 }
 
+.et_pb_button {
+    @include ffl-button();
+}
+
 @import "typography";
 @import "footer";
 @import "navigation";
