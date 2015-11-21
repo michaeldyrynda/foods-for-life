@@ -64,21 +64,7 @@ form {
     }
 
     .et_pb_promo_button.et_pb_button {
-      @include font-family-primary-bold();
-
-      color: $font-color-secondary;
-      font-size: 14px;
-      line-height: 1.8em !important;
-      text-transform: uppercase;
-
-      &:hover {
-        border-color: $font-color-secondary;
-        cursor: pointer;
-      }
-
-      &:after {
-        line-height: 0.8;
-      }
+      @include ffl-button($font-color-secondary);
 
       &:disabled,
       &:disabled:hover,
@@ -152,7 +138,7 @@ form {
       text-align: center;
       width: 30%;
     }
-    
+
     button.delete,
     button.update {
       background: transparent;
