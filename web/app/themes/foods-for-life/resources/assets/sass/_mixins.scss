@@ -36,9 +36,8 @@
   @include font-family-primary-bold();
 
   color: $color !important;
-  font-size: 40px;
-  padding-bottom: 40px;
-  padding-top: 40px;
+  font-size: 30px;
+  padding-bottom: 30px;
 }
 
 @mixin heading-uppercase($color: $font-color-primary) {

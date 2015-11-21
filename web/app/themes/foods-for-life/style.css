@@ -51,9 +51,8 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   color: #e7ded0 !important;
-  font-size: 40px;
-  padding-bottom: 40px;
-  padding-top: 40px;
+  font-size: 30px;
+  padding-bottom: 30px;
   text-transform: uppercase;
   text-align: center; }
 
@@ -325,21 +324,28 @@ body {
 .cafe__heading__light {
   font-size: 30px; }
 
-.cafe__heading__dark {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-  color: #2e2823 !important;
-  font-size: 40px;
-  padding-bottom: 40px;
-  padding-top: 40px; }
+.cafe__text-dark,
+.cafe__text-light {
+  font-size: 18px;
+  line-height: 28px; }
 
-.cafe__heading__light {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-  color: #e7ded0 !important;
-  font-size: 40px;
-  padding-bottom: 40px;
-  padding-top: 40px; }
+.cafe__text-dark {
+  color: #2e2823; }
+  .cafe__text-dark h1 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #2e2823 !important;
+    font-size: 30px;
+    padding-bottom: 30px; }
+
+.cafe__text-light {
+  color: #e7ded0; }
+  .cafe__text-light h1 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #e7ded0 !important;
+    font-size: 30px;
+    padding-bottom: 30px; }
 
 .cafe__text__dark,
 .cafe__text__light {
@@ -354,6 +360,7 @@ body {
 
 .et_boxed_layout #page-container .cafe__menu__group .et_pb_row {
   margin: 0;
+  min-height: 280px;
   width: 100%; }
   .et_boxed_layout #page-container .cafe__menu__group .et_pb_row .et_pb_column {
     margin: 0;
@@ -401,9 +408,8 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   color: #a61f14 !important;
-  font-size: 40px;
-  padding-bottom: 40px;
-  padding-top: 40px;
+  font-size: 30px;
+  padding-bottom: 30px;
   text-transform: uppercase;
   font-size: 30px;
   text-align: center; }

@@ -3,12 +3,26 @@
   font-size: 30px;
 }
 
-.cafe__heading__dark {
-  @include heading($font-color-dark);
+.cafe__text-dark,
+.cafe__text-light {
+  font-size: 18px;
+  line-height: 28px;
 }
 
-.cafe__heading__light {
-  @include heading($font-color-primary);
+.cafe__text-dark {
+  color: $font-color-dark;
+
+  h1 {
+    @include heading($font-color-dark);
+  }
+}
+
+.cafe__text-light {
+  color: $font-color-primary;
+
+  h1 {
+    @include heading($font-color-primary);
+  }
 }
 
 .cafe__text__dark,
@@ -27,6 +41,7 @@
 
 .et_boxed_layout #page-container .cafe__menu__group .et_pb_row {
   margin: 0;
+  min-height: 280px;
   width: 100%;
 
   .et_pb_column {
