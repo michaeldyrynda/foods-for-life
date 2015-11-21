@@ -12,7 +12,7 @@
   font-weight: 600;
 }
 
-@mixin primary-button($color: $font-color-primary) {
+@mixin ffl-button($color: $font-color-primary) {
   @include font-family-primary-bold();
 
   border-color: $color;
@@ -24,6 +24,12 @@
 
   &:after {
     line-height: 0.7;
+  }
+
+  &:hover {
+    border-color: $color;
+    cursor: pointer;
+    padding-right: 3em;
   }
 }
 
