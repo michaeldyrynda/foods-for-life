@@ -12,6 +12,12 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 add_action('woocommerce_before_main_content', 'specials_render_heading');
 add_action('woocommerce_after_single_product', 'specials_render_button');
 
+function foods_for_life_scripts() {
+    wp_enqueue_script('ffl-scripts', get_stylesheet_directory_uri() . '/js/ffl.js', array( 'jquery', ));
+}
+
+add_action('wp_enqueue_scripts', 'foods_for_life_scripts');
+
 function get_catering_posts() {
     $categories = get_categories(array( 'child_of' => 16, ));
 
