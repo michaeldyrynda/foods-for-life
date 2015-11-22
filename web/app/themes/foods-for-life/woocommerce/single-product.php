@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' );
 
-specials_render_heading();
+render_heading('Specials');
 
 ?>
 

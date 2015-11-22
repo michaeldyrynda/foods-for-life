@@ -9,7 +9,7 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
  */
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30, 0);
 
-add_action('woocommerce_before_main_content', 'specials_render_heading');
+add_action('woocommerce_before_main_content', 'render_heading', 10, 1);
 add_action('woocommerce_after_single_product', 'specials_render_button');
 
 function foods_for_life_scripts() {
@@ -113,14 +113,14 @@ MESSAGE;
 }
 
 
-function specials_render_heading() {
+function render_heading($title) {
     print <<<HEADING
 <div class="et_pb_section et_pb_fullwidth_section page__heading specials et_pb_section_0 et_section_regular">
     <section class="et_pb_fullwidth_header et_pb_module et_pb_bg_layout_light et_pb_text_align_left health-foods__heading et_pb_fullwidth_header_0">
 	    <div class="et_pb_fullwidth_header_container left">
 		    <div class="header-content-container center">
 			    <div class="header-content">
-				    <h1>Specials</h1>
+				    <h1>{$title}</h1>
                 </div>
             </div>
         </div>
