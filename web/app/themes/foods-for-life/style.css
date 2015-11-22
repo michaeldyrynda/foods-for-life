@@ -893,4 +893,12 @@ form #order-details .et_pb_promo_button.et_pb_button {
   font-size: 24px;
   padding: 10px 0 30px; }
 
+.categories__content {
+  color: #2e2823; }
+  .categories__content h1.page-title {
+    color: #2e2823;
+    padding-bottom: 40px; }
+  .categories__content h2 {
+    color: #a61f14; }
+
 /*# sourceMappingURL=style.css.map */

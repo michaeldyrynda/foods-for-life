@@ -9,17 +9,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 ?>
 
     <div id="main-content" class="ffl-single-post">
-        <div class="et_pb_section et_pb_inner_shadow et_pb_fullwidth_section  et_pb_section_0 et_section_regular et_section_transparent">
-            <section class="et_pb_fullwidth_header et_pb_module et_pb_bg_layout_dark et_pb_text_align_center news__heading et_pb_fullwidth_header_0">
-                <div class="et_pb_fullwidth_header_container center">
-                    <div class="header-content-container center">
-                        <div class="header-content">
-                            <h1>FFL News</h1>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <?php render_heading('FFL News'); ?>
         <div class="et_pb_section et_pb_section_1 et_pb_with_background et_section_regular">
             <div class="et_pb_row et_pb_row_0 et_pb_equal_columns et_pb_row_3-4_1_4">
                 <div class="et_pb_column et_pb_column_3_4 et_pb_column_0">
