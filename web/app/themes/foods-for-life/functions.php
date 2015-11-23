@@ -9,7 +9,6 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
  */
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30, 0);
 
-//add_action('woocommerce_before_main_content', 'render_heading', 10, 1);
 add_action('woocommerce_after_single_product', 'specials_render_button');
 
 function foods_for_life_scripts() {
