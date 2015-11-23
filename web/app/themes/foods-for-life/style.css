@@ -47,21 +47,27 @@ body {
 .font-dark-color {
   color: #2e2823; }
 
-.page__heading h1 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-  color: #e7ded0 !important;
-  font-size: 30px;
-  padding-bottom: 30px;
-  text-transform: uppercase;
-  text-align: center; }
+.page__heading .et_pb_fullwidth_header {
+  min-height: 265px;
+  padding-top: 110px; }
+  .page__heading .et_pb_fullwidth_header h1 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #e7ded0 !important;
+    font-size: 30px;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center; }
 
 .page__subheading {
   background-color: #a61f14; }
+  @media screen and (min-width: 981px) {
+    .page__subheading {
+      padding: 20px 0 !important; } }
   .page__subheading .et_pb_row .et_pb_column .et_pb_text {
     color: #e7ded0 !important;
     font-size: 20px;
-    line-height: 1.6em;
+    line-height: 1.3em;
     width: 67%; }
 
 /** End font utility classes */
