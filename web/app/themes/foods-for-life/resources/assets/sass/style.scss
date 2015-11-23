@@ -15,6 +15,10 @@ body {
   background-color: $site-background-color;
 }
 
+.et_boxed_layout.et_vertical_nav #page-container {
+  max-width: 1395px;
+}
+
 .et_pb_button {
     @include ffl-button();
 }
