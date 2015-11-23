@@ -759,6 +759,8 @@ form #order-details .et_pb_promo_button.et_pb_button {
 .et_boxed_layout #page-container .et_pb_section.specials__content {
   background-color: #e3dacb;
   padding: 0; }
+  .et_boxed_layout #page-container .et_pb_section.specials__content .container {
+    padding-top: 0; }
   .et_boxed_layout #page-container .et_pb_section.specials__content .et_pb_row {
     padding: 0;
     width: 100%; }
