@@ -11,6 +11,9 @@
 body {
   background-color: #e3dacb; }
 
+.et_boxed_layout.et_vertical_nav #page-container {
+  max-width: 1395px; }
+
 .et_pb_button {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
