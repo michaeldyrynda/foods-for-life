@@ -348,6 +348,10 @@ body {
     color: #2e2823 !important;
     font-size: 30px;
     padding-bottom: 30px; }
+  .cafe__text-dark a {
+    color: #a61f14; }
+    .cafe__text-dark a:hover {
+      text-decoration: underline; }
 
 .cafe__text-light {
   color: #e7ded0; }
