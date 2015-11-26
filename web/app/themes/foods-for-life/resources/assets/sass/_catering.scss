@@ -1,6 +1,10 @@
 .et_boxed_layout .catering__form {
   @media screen and (max-width: 479px) {
-    padding: 0;
+    padding-top: 0;
+  }
+
+  @media screen and (max-width: 980px) {
+    padding-bottom: 0;
   }
 
   h1 {
@@ -15,7 +19,7 @@
     color: $font-color-dark;
     padding-bottom: 0.2em;
 
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: 980px) {
       padding: 0 20px;
     }
   }
@@ -86,6 +90,7 @@ form {
     .et_pb_promo {
       background-color: #fbf8f4;
       padding: 20px 60px 40px;
+      width: 100%;
     }
 
     .et_pb_promo_button.et_pb_button {
@@ -221,17 +226,42 @@ form {
     float: left;
     font-size: 11px;
     min-height: 420px;
-    margin: 0px 26px 26px 0;
+    margin: 0 0 20px;
     position: relative;
-    width: 235px;
+    width: 100%;
 
-    @media screen and (max-width: 479px) {
-      margin: 13px auto;
-      width: 100%;
+    .catering__menu-item__image {
+      display: block;
+      margin: 0 auto;
     }
 
-    &:nth-of-type(4n) {
-      margin-right: 0;
+    @media screen and (min-width: 648px) and (max-width: 960px),
+                      (min-width: 981px) and (max-width: 1219px) {
+      margin: 0 4% 4% 0;
+      width: 48%;
+
+      &:nth-of-type(even) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (min-width: 961px) and (max-width: 980px),
+                      (min-width: 1220px) and (max-width: 1549px) {
+      margin: 0 2% 2% 0;
+      width: 32%;
+
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (min-width: 1550px) {
+      margin: 0 2% 2% 0;
+      width: 23%;
+
+      &:nth-of-type(4n) {
+        marin-right: 0;
+      }
     }
 
     h3 {

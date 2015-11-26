@@ -545,7 +545,11 @@ body {
 
 @media screen and (max-width: 479px) {
   .et_boxed_layout .catering__form {
-    padding: 0; } }
+    padding-top: 0; } }
+
+@media screen and (max-width: 980px) {
+  .et_boxed_layout .catering__form {
+    padding-bottom: 0; } }
 
 .et_boxed_layout .catering__form h1 {
   font-family: "Open Sans", sans-serif;
@@ -557,7 +561,7 @@ body {
 .et_boxed_layout .catering__form p {
   color: #2e2823;
   padding-bottom: 0.2em; }
-  @media screen and (max-width: 479px) {
+  @media screen and (max-width: 980px) {
     .et_boxed_layout .catering__form p {
       padding: 0 20px; } }
 
@@ -606,7 +610,8 @@ form #order-details .order_input_container {
 
 form #order-details .et_pb_promo {
   background-color: #fbf8f4;
-  padding: 20px 60px 40px; }
+  padding: 20px 60px 40px;
+  width: 100%; }
 
 form #order-details .et_pb_promo_button.et_pb_button {
   font-family: "Open Sans", sans-serif;
@@ -712,15 +717,30 @@ form #order-details .et_pb_promo_button.et_pb_button {
     float: left;
     font-size: 11px;
     min-height: 420px;
-    margin: 0px 26px 26px 0;
+    margin: 0 0 20px;
     position: relative;
-    width: 235px; }
-    @media screen and (max-width: 479px) {
+    width: 100%; }
+    .et_boxed_layout #page-container .catering__menu .catering__menu-item .catering__menu-item__image {
+      display: block;
+      margin: 0 auto; }
+    @media screen and (min-width: 648px) and (max-width: 960px), (min-width: 981px) and (max-width: 1219px) {
       .et_boxed_layout #page-container .catering__menu .catering__menu-item {
-        margin: 13px auto;
-        width: 100%; } }
-    .et_boxed_layout #page-container .catering__menu .catering__menu-item:nth-of-type(4n) {
-      margin-right: 0; }
+        margin: 0 4% 4% 0;
+        width: 48%; }
+        .et_boxed_layout #page-container .catering__menu .catering__menu-item:nth-of-type(even) {
+          margin-right: 0; } }
+    @media screen and (min-width: 961px) and (max-width: 980px), (min-width: 1220px) and (max-width: 1549px) {
+      .et_boxed_layout #page-container .catering__menu .catering__menu-item {
+        margin: 0 2% 2% 0;
+        width: 32%; }
+        .et_boxed_layout #page-container .catering__menu .catering__menu-item:nth-of-type(3n) {
+          margin-right: 0; } }
+    @media screen and (min-width: 1550px) {
+      .et_boxed_layout #page-container .catering__menu .catering__menu-item {
+        margin: 0 2% 2% 0;
+        width: 23%; }
+        .et_boxed_layout #page-container .catering__menu .catering__menu-item:nth-of-type(4n) {
+          marin-right: 0; } }
     .et_boxed_layout #page-container .catering__menu .catering__menu-item h3 {
       font-family: "Open Sans", sans-serif;
       font-weight: 700;
