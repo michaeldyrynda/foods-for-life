@@ -543,6 +543,10 @@ body {
             #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 .et_pb_widget.widget_categories ul li a {
               color: #2e2823; }
 
+@media screen and (max-width: 479px) {
+  .et_boxed_layout .catering__form {
+    padding: 0; } }
+
 .et_boxed_layout .catering__form h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
@@ -553,14 +557,25 @@ body {
 .et_boxed_layout .catering__form p {
   color: #2e2823;
   padding-bottom: 0.2em; }
+  @media screen and (max-width: 479px) {
+    .et_boxed_layout .catering__form p {
+      padding: 0 20px; } }
 
 form .order_input {
   display: block;
   float: left;
-  margin-right: 15px;
-  width: 231px; }
+  margin-right: 10px;
+  width: 226px; }
+  @media screen and (max-width: 767px) {
+    form .order_input {
+      width: 100%; } }
   form .order_input.double {
     width: 462px; }
+    @media screen and (max-width: 767px) {
+      form .order_input.double {
+        width: 100%; } }
+  form .order_input.full {
+    width: 100%; }
   form .order_input:last-of-type {
     margin-right: 0; }
   @media screen and (max-width: 479px) {
@@ -574,13 +589,16 @@ form .order_input {
     display: block;
     margin-top: 10px; }
   form .order_input input[type=text],
-  form .order_input input[type=date] {
+  form .order_input input[type=date],
+  form .order_input textarea {
     background: transparent;
     border: 1px solid #e3dacb;
     color: #2e2823;
     display: block;
     padding: 10px 0 10px 15px;
     width: 100%; }
+  form .order_input input[type=text] {
+    padding: 11px 0 11px 15px; }
 
 form #order-details .order_input_container {
   background-color: #fbf8f4;
@@ -641,12 +659,17 @@ form #order-details .et_pb_promo_button.et_pb_button {
     .et_boxed_layout #page-container .catering__menu #submit-message .title {
       display: block;
       font-weight: bold; }
+  .et_boxed_layout #page-container .catering__menu .table-responsive {
+    overflow-x: auto;
+    overflow-y: hidden; }
   .et_boxed_layout #page-container .catering__menu table.order {
     background-color: #fbf8f4;
     border: 1px;
     border-collapse: collapse;
     margin: 0;
-    padding: 0; }
+    max-width: 100%;
+    padding: 0;
+    width: 100%; }
     .et_boxed_layout #page-container .catering__menu table.order input[type=number] {
       background: transparent;
       border: 1px solid #e3dacb;
@@ -654,6 +677,9 @@ form #order-details .et_pb_promo_button.et_pb_button {
       padding: 10px 0 10px 15px;
       text-align: center;
       width: 30%; }
+      @media screen and (max-width: 479px) {
+        .et_boxed_layout #page-container .catering__menu table.order input[type=number] {
+          width: 100%; } }
     .et_boxed_layout #page-container .catering__menu table.order button.delete,
     .et_boxed_layout #page-container .catering__menu table.order button.update {
       background: transparent;
@@ -663,6 +689,11 @@ form #order-details .et_pb_promo_button.et_pb_button {
       .et_boxed_layout #page-container .catering__menu table.order button.delete:hover,
       .et_boxed_layout #page-container .catering__menu table.order button.update:hover {
         cursor: pointer; }
+      @media screen and (max-width: 479px) {
+        .et_boxed_layout #page-container .catering__menu table.order button.delete,
+        .et_boxed_layout #page-container .catering__menu table.order button.update {
+          display: block;
+          width: 100%; } }
     .et_boxed_layout #page-container .catering__menu table.order thead {
       background-color: #2e2823;
       font-size: 14px;

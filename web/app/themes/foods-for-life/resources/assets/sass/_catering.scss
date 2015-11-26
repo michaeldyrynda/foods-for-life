@@ -1,4 +1,8 @@
 .et_boxed_layout .catering__form {
+  @media screen and (max-width: 479px) {
+    padding: 0;
+  }
+
   h1 {
     @include font-family-primary-bold();
 
@@ -10,6 +14,10 @@
   p {
     color: $font-color-dark;
     padding-bottom: 0.2em;
+
+    @media screen and (max-width: 479px) {
+      padding: 0 20px;
+    }
   }
 }
 
@@ -17,11 +25,23 @@ form {
   .order_input {
     display: block;
     float: left;
-    margin-right: 15px;
-    width: 231px;
+    margin-right: 10px;
+    width: 226px;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
 
     &.double {
       width: 462px;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+
+    &.full {
+      width: 100%;
     }
 
     &:last-of-type {
@@ -42,13 +62,18 @@ form {
     }
 
     input[type=text],
-    input[type=date] {
+    input[type=date],
+    textarea {
       background: transparent;
       border: 1px solid #e3dacb;
       color: $font-color-dark;
       display: block;
       padding: 10px 0 10px 15px;
       width: 100%;
+    }
+
+    input[type=text] {
+      padding: 11px 0 11px 15px;
     }
   }
 
@@ -123,12 +148,19 @@ form {
     }
   }
 
+  .table-responsive {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
   table.order {
     background-color: #fbf8f4;
     border: 1px;
     border-collapse: collapse;
     margin: 0;
+    max-width: 100%;
     padding: 0;
+    width: 100%;
 
     input[type=number] {
       background: transparent;
@@ -137,6 +169,10 @@ form {
       padding: 10px 0 10px 15px;
       text-align: center;
       width: 30%;
+
+      @media screen and (max-width: 479px) {
+        width: 100%;
+      }
     }
 
     button.delete,
@@ -148,6 +184,11 @@ form {
 
       &:hover {
         cursor: pointer;
+      }
+
+      @media screen and (max-width: 479px) {
+        display: block;
+        width: 100%;
       }
     }
 

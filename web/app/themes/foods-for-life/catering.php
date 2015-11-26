@@ -91,7 +91,7 @@ $categories = get_catering_posts();
 
                     <div class="et_pb_section catering__menu et_pb_section_99 et_pb_with_background et_section_regular">
                         <form action="/catering/" id="order-form" method="post">
-                            <div class="et_pb_row et_pb_row_99 et_pb_row_4col">
+                            <div class="et_pb_row et_pb_row_99 et_pb_row_4col table-responsive">
                                 <div id="submit-message">
                                     <span class="title"></span>
                                     <span class="content"></span>
@@ -148,6 +148,10 @@ $categories = get_catering_posts();
                                     <div class="order_input">
                                         <label for="order_delivery_date">Delivery Date</label>
                                         <input id="order_delivery_date" name="order_delivery_date" type="date" required">
+                                    </div>
+                                    <div class="order_input full">
+                                        <label for="order-comments">Additional Comments</label>
+                                        <textarea id="order-comments" name="order_comments" rows="10"></textarea>
                                     </div>
                                 </div>
                                 <div class="et_pb_promo et_pb_module">
@@ -336,9 +340,13 @@ $categories = get_catering_posts();
                             $(this).val('');
                         });
 
+                        $('#order-comments').val('');
+
                         $('#no-items').show();
                         $('#submit-order').attr('disabled', 'disabled');
                         update_total();
+
+                        $('html, body').animate({ scrollTop: $('#order-form').offset().top }, 'slow');
                     } else {
                         $('#submit-message').addClass('error');
                         $('#submit-message .title').html('Please check your input and try again');
@@ -349,6 +357,8 @@ $categories = get_catering_posts();
                                 '<li>' + data.errors[i] + '</li>'
                             );
                         }
+
+                        $('html, body').animate({ scrollTop: $('#order-form').offset().top - 15 }, 'slow');
                     }
 
                     $('#submit-message').show();
@@ -382,7 +392,7 @@ $categories = get_catering_posts();
                             '<td>' + description + '</td>' +
                             '<td>' + min_desc + '</td>' +
                             '<td>' +
-                                '<input type="number" class="quantity" name="items[' + id + ']" min="' + minimum +'" data-minimum="' + minimum + '" data-price="' + price + '" data-item="' + id + '" value="' + quantity + '">&nbsp;' +
+                                '<input type="number" class="quantity" name="items[' + id + ']" min="' + minimum +'" data-minimum="' + minimum + '" data-price="' + price + '" data-item="' + id + '" value="' + quantity + '">' +
                                 '<button type="button" class="update">Update</button>' +
                                 '<button type="button" class="delete">Delete</button>' +
                             '</td>' +
