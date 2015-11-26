@@ -32,6 +32,7 @@
       @include heading($font-color-primary);
       @include heading-uppercase();
 
+      letter-spacing: 0.02em;
       text-align: center;
     }
   }
@@ -48,6 +49,7 @@
     color: $font-color-primary !important;
     font-size: 20px;
     line-height: 1.3em;
+    letter-spacing: 0.02em;
     width: 67%;
   }
 }

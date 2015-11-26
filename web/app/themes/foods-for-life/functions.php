@@ -64,6 +64,7 @@ Order Contact Number: {$input['order_phone']}
 Order Contact Email:  {$input['order_email']}
 Order Address:        {$input['order_delivery']}
 Order Delivery Date:  {$delivery_date}
+Additional Comments:  {$input['order_comments']}
 --------
 Order Items:
 MESSAGE;

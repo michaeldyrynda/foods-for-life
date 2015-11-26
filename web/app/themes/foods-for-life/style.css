@@ -60,6 +60,7 @@ body {
     font-size: 30px;
     padding-bottom: 30px;
     text-transform: uppercase;
+    letter-spacing: 0.02em;
     text-align: center; }
 
 .page__subheading {
@@ -71,6 +72,7 @@ body {
     color: #e7ded0 !important;
     font-size: 20px;
     line-height: 1.3em;
+    letter-spacing: 0.02em;
     width: 67%; }
 
 /** End font utility classes */
@@ -165,6 +167,43 @@ body {
           color: #562700;
           font-size: 10px;
           text-decoration: underline; } }
+
+#footer-widgets .footer-widget .social,
+.social {
+  margin-top: 20px; }
+  #footer-widgets .footer-widget .social ul,
+  .social ul {
+    list-style-type: none; }
+    #footer-widgets .footer-widget .social ul li,
+    .social ul li {
+      background-color: #a61f14;
+      border-radius: 18px;
+      display: block;
+      float: left;
+      font-size: 24px;
+      height: 36px;
+      line-height: 36px;
+      margin-right: 6px;
+      text-align: center;
+      width: 36px; }
+      #footer-widgets .footer-widget .social ul li:hover,
+      .social ul li:hover {
+        background-color: #bd2317; }
+      #footer-widgets .footer-widget .social ul li:last-child,
+      .social ul li:last-child {
+        margin-right: 0; }
+      #footer-widgets .footer-widget .social ul li a,
+      .social ul li a {
+        color: #faf7f2; }
+
+#footer-widgets .footer-widget .social {
+  margin-top: 0; }
+  #footer-widgets .footer-widget .social ul li {
+    background-color: #e7ded0; }
+    #footer-widgets .footer-widget .social ul li:hover {
+      background-color: #ded2bf; }
+    #footer-widgets .footer-widget .social ul li a {
+      color: #a61f14; }
 
 /** Slider */
 .et_boxed_layout #page-container .home__slider {
@@ -346,6 +385,10 @@ body {
     color: #2e2823 !important;
     font-size: 30px;
     padding-bottom: 30px; }
+  .cafe__text-dark a {
+    color: #a61f14; }
+    .cafe__text-dark a:hover {
+      text-decoration: underline; }
 
 .cafe__text-light {
   color: #e7ded0; }
@@ -537,6 +580,14 @@ body {
             #main-content.ffl-single-post .et_pb_section_1 .et_pb_row .et_pb_column_1 .et_pb_widget.widget_categories ul li a {
               color: #2e2823; }
 
+@media screen and (max-width: 479px) {
+  .et_boxed_layout .catering__form {
+    padding-top: 0; } }
+
+@media screen and (max-width: 980px) {
+  .et_boxed_layout .catering__form {
+    padding-bottom: 0; } }
+
 .et_boxed_layout .catering__form h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
@@ -547,14 +598,25 @@ body {
 .et_boxed_layout .catering__form p {
   color: #2e2823;
   padding-bottom: 0.2em; }
+  @media screen and (max-width: 980px) {
+    .et_boxed_layout .catering__form p {
+      padding: 0 20px; } }
 
 form .order_input {
   display: block;
   float: left;
-  margin-right: 15px;
-  width: 231px; }
+  margin-right: 10px;
+  width: 226px; }
+  @media screen and (max-width: 767px) {
+    form .order_input {
+      width: 100%; } }
   form .order_input.double {
     width: 462px; }
+    @media screen and (max-width: 767px) {
+      form .order_input.double {
+        width: 100%; } }
+  form .order_input.full {
+    width: 100%; }
   form .order_input:last-of-type {
     margin-right: 0; }
   @media screen and (max-width: 479px) {
@@ -568,13 +630,16 @@ form .order_input {
     display: block;
     margin-top: 10px; }
   form .order_input input[type=text],
-  form .order_input input[type=date] {
+  form .order_input input[type=date],
+  form .order_input textarea {
     background: transparent;
     border: 1px solid #e3dacb;
     color: #2e2823;
     display: block;
     padding: 10px 0 10px 15px;
     width: 100%; }
+  form .order_input input[type=text] {
+    padding: 11px 0 11px 15px; }
 
 form #order-details .order_input_container {
   background-color: #fbf8f4;
@@ -582,7 +647,8 @@ form #order-details .order_input_container {
 
 form #order-details .et_pb_promo {
   background-color: #fbf8f4;
-  padding: 20px 60px 40px; }
+  padding: 20px 60px 40px;
+  width: 100%; }
 
 form #order-details .et_pb_promo_button.et_pb_button {
   font-family: "Open Sans", sans-serif;
@@ -635,12 +701,17 @@ form #order-details .et_pb_promo_button.et_pb_button {
     .et_boxed_layout #page-container .catering__menu #submit-message .title {
       display: block;
       font-weight: bold; }
+  .et_boxed_layout #page-container .catering__menu .table-responsive {
+    overflow-x: auto;
+    overflow-y: hidden; }
   .et_boxed_layout #page-container .catering__menu table.order {
     background-color: #fbf8f4;
     border: 1px;
     border-collapse: collapse;
     margin: 0;
-    padding: 0; }
+    max-width: 100%;
+    padding: 0;
+    width: 100%; }
     .et_boxed_layout #page-container .catering__menu table.order input[type=number] {
       background: transparent;
       border: 1px solid #e3dacb;
@@ -648,6 +719,9 @@ form #order-details .et_pb_promo_button.et_pb_button {
       padding: 10px 0 10px 15px;
       text-align: center;
       width: 30%; }
+      @media screen and (max-width: 479px) {
+        .et_boxed_layout #page-container .catering__menu table.order input[type=number] {
+          width: 100%; } }
     .et_boxed_layout #page-container .catering__menu table.order button.delete,
     .et_boxed_layout #page-container .catering__menu table.order button.update {
       background: transparent;
@@ -657,6 +731,11 @@ form #order-details .et_pb_promo_button.et_pb_button {
       .et_boxed_layout #page-container .catering__menu table.order button.delete:hover,
       .et_boxed_layout #page-container .catering__menu table.order button.update:hover {
         cursor: pointer; }
+      @media screen and (max-width: 479px) {
+        .et_boxed_layout #page-container .catering__menu table.order button.delete,
+        .et_boxed_layout #page-container .catering__menu table.order button.update {
+          display: block;
+          width: 100%; } }
     .et_boxed_layout #page-container .catering__menu table.order thead {
       background-color: #2e2823;
       font-size: 14px;
@@ -675,15 +754,30 @@ form #order-details .et_pb_promo_button.et_pb_button {
     float: left;
     font-size: 11px;
     min-height: 420px;
-    margin: 0px 26px 26px 0;
+    margin: 0 0 20px;
     position: relative;
-    width: 235px; }
-    @media screen and (max-width: 479px) {
+    width: 100%; }
+    .et_boxed_layout #page-container .catering__menu .catering__menu-item .catering__menu-item__image {
+      display: block;
+      margin: 0 auto; }
+    @media screen and (min-width: 648px) and (max-width: 960px), (min-width: 981px) and (max-width: 1219px) {
       .et_boxed_layout #page-container .catering__menu .catering__menu-item {
-        margin: 13px auto;
-        width: 100%; } }
-    .et_boxed_layout #page-container .catering__menu .catering__menu-item:nth-of-type(4n) {
-      margin-right: 0; }
+        margin: 0 4% 4% 0;
+        width: 48%; }
+        .et_boxed_layout #page-container .catering__menu .catering__menu-item:nth-of-type(even) {
+          margin-right: 0; } }
+    @media screen and (min-width: 961px) and (max-width: 980px), (min-width: 1220px) and (max-width: 1549px) {
+      .et_boxed_layout #page-container .catering__menu .catering__menu-item {
+        margin: 0 2% 2% 0;
+        width: 32%; }
+        .et_boxed_layout #page-container .catering__menu .catering__menu-item:nth-of-type(3n) {
+          margin-right: 0; } }
+    @media screen and (min-width: 1550px) {
+      .et_boxed_layout #page-container .catering__menu .catering__menu-item {
+        margin: 0 2% 2% 0;
+        width: 23%; }
+        .et_boxed_layout #page-container .catering__menu .catering__menu-item:nth-of-type(4n) {
+          marin-right: 0; } }
     .et_boxed_layout #page-container .catering__menu .catering__menu-item h3 {
       font-family: "Open Sans", sans-serif;
       font-weight: 700;
@@ -691,10 +785,11 @@ form #order-details .et_pb_promo_button.et_pb_button {
       font-size: 14px;
       padding-bottom: 20px; }
     .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description {
+      font-size: 12px;
       padding: 15px; }
       .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description p {
         color: #2e2823;
-        padding-bottom: 0.2em; }
+        line-height: 1.7em; }
       .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .serving {
         font-style: italic; }
         .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .serving .serving__title {
@@ -755,6 +850,9 @@ form #order-details .et_pb_promo_button.et_pb_button {
 
 .et_boxed_layout #page-container .specials .et_pb_row {
   width: 100%; }
+
+.et_boxed_layout #page-container .specials .et_shop_image .et_overlay:before {
+  color: #a61f14; }
 
 .et_boxed_layout #page-container .et_pb_section.specials__content {
   background-color: #e3dacb;

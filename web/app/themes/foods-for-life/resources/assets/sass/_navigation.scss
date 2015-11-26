@@ -96,3 +96,54 @@
     }
   }
 }
+
+#footer-widgets .footer-widget .social,
+.social {
+  margin-top: 20px;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      background-color: $font-color-secondary;
+      border-radius: 18px;
+      display: block;
+      float: left;
+      font-size: 24px;
+      height: 36px;
+      line-height: 36px;
+      margin-right: 6px;
+      text-align: center;
+      width: 36px;
+
+      &:hover {
+        background-color: lighten($font-color-secondary, 5%);
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: #faf7f2;
+      }
+    }
+  }
+}
+
+// Footer social icon-specific styles
+#footer-widgets .footer-widget .social {
+  margin-top: 0;
+
+  ul li {
+    background-color: #e7ded0;
+
+    &:hover {
+      background-color: darken(#e7ded0, 5%);
+    }
+
+    a {
+      color: $font-color-secondary;
+    }
+  }
+}
