@@ -60,6 +60,7 @@ body {
     font-size: 30px;
     padding-bottom: 30px;
     text-transform: uppercase;
+    letter-spacing: 0.02em;
     text-align: center; }
 
 .page__subheading {
@@ -71,6 +72,7 @@ body {
     color: #e7ded0 !important;
     font-size: 20px;
     line-height: 1.3em;
+    letter-spacing: 0.02em;
     width: 67%; }
 
 /** End font utility classes */
