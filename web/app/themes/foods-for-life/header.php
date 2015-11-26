@@ -151,7 +151,10 @@
                         <address>
                             58A, Gawler Place<br />
                             Adelaide, SA 5000<br />
-                            <small><a href="https://goo.gl/maps/rptUhypNLmS2" target="_blank">View Map</a></small>
+                            <small>
+                                <a href="/contact">Opening Hours</a>&nbsp;
+                                <a href="https://goo.gl/maps/rptUhypNLmS2" target="_blank">View Map</a>
+                            </small>
                         </address>
                     </div>
                 </div>
