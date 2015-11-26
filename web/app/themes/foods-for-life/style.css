@@ -814,6 +814,9 @@ form #order-details .et_pb_promo_button.et_pb_button {
 .et_boxed_layout #page-container .specials .et_pb_row {
   width: 100%; }
 
+.et_boxed_layout #page-container .specials .et_shop_image .et_overlay:before {
+  color: #a61f14; }
+
 .et_boxed_layout #page-container .et_pb_section.specials__content {
   background-color: #e3dacb;
   padding: 0; }

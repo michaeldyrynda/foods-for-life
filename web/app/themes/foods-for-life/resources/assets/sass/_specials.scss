@@ -20,6 +20,14 @@
   .et_pb_row {
     width: 100%;
   }
+
+  .et_shop_image {
+    .et_overlay {
+      &:before {
+        color: $font-color-secondary;
+      }
+    }
+  }
 }
 
 .et_boxed_layout #page-container .et_pb_section.specials__content {
