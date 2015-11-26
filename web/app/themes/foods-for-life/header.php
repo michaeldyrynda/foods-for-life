@@ -31,6 +31,7 @@
     </script>
 
     <?php wp_head(); ?>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body <?php body_class(); ?>>
 <div id="page-container">
@@ -156,6 +157,30 @@
                                 <a href="https://goo.gl/maps/rptUhypNLmS2" target="_blank">View Map</a>
                             </small>
                         </address>
+                    </div>
+                    <div class="social">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/FoodsforLifeGawlerPlace/" target="_blank">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/FoodsForLife1" target="_blank">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://web.wechat.com" target="_blank">
+                                    <i class="fa fa-weixin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/foodsforlife_adl/" target="_blank">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
