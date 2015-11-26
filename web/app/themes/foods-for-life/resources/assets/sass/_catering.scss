@@ -273,11 +273,12 @@ form {
     }
 
     .item-description {
+      font-size: 12px;
       padding: 15px;
 
       p {
         color: $font-color-dark;
-        padding-bottom: 0.2em;
+        line-height: 1.7em;
       }
 
       .serving {

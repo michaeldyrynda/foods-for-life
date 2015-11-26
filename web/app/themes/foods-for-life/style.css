@@ -748,10 +748,11 @@ form #order-details .et_pb_promo_button.et_pb_button {
       font-size: 14px;
       padding-bottom: 20px; }
     .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description {
+      font-size: 12px;
       padding: 15px; }
       .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description p {
         color: #2e2823;
-        padding-bottom: 0.2em; }
+        line-height: 1.7em; }
       .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .serving {
         font-style: italic; }
         .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .serving .serving__title {

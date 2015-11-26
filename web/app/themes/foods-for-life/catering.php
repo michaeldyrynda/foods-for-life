@@ -169,7 +169,7 @@ $categories = get_catering_posts();
                                         <img src="<?= $post->featured_image ?>" class="catering__menu-item__image" />
                                         <div class="item-description">
                                             <h3><?= $post->post_title ?></h3>
-                                            <?= $post->post_content ?>
+                                            <p><?= $post->post_content ?></p>
 
                                             <?php if (isset($post->custom_fields['serving'])): ?>
                                                 <div class="serving">
