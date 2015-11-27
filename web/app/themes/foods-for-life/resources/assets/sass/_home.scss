@@ -163,6 +163,73 @@
   .et_pb_column:last-child {
     background: url('./img/bg_food-detective.jpg') top center no-repeat;
   }
+
+  .ninja-forms-cont {
+    padding-top: 20px;
+
+    .ninja-forms-success-msg {
+      p {
+        padding-bottom: 0;
+
+        &:first-child,
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+
+    form.ninja-forms-form {
+      .field-wrap {
+        margin: 10px 0 20px 0;
+      }
+
+      .ninja-forms-required-items {
+        display: none;
+      }
+
+      .ninja-forms-field-error {
+        display: none !important;
+      }
+
+      label {
+        @include font-family-primary-bold;
+        color: $font-color-primary;
+        display: block;
+        float: left;
+        font-size: 18px;
+        line-height: 38px;
+        margin-right: 2%;
+        text-align: center;
+        text-transform: uppercase;
+        width: 23%;
+
+        .ninja-forms-req-symbol {
+          display: none;
+        }
+      }
+
+      .ninja-forms-field {
+        &[type=text],
+        &[type=email] {
+          background-color: #e7ded0;
+          border: 0 none;
+          display: block;
+          float: left;
+          line-height: 28px;
+          padding: 5px 10px;
+          width: 70%;
+        }
+
+        &.et_pb_button {
+          width: 46%;
+
+          &:hover {
+            padding: 0.5em 2.2em;
+          }
+        }
+      }
+    }
+  }
 }
 /** End news signup and food detective */
 
