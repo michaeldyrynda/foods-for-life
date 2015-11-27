@@ -356,6 +356,44 @@ body {
     background: url("./img/bg_enews.jpg") top center no-repeat; }
   .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column:last-child {
     background: url("./img/bg_food-detective.jpg") top center no-repeat; }
+  .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont {
+    padding-top: 20px; }
+    .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont .ninja-forms-success-msg p {
+      padding-bottom: 0; }
+      .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont .ninja-forms-success-msg p:first-child, .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont .ninja-forms-success-msg p:last-child {
+        display: none; }
+    .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont form.ninja-forms-form .field-wrap {
+      margin: 10px 0 20px 0; }
+    .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont form.ninja-forms-form .ninja-forms-required-items {
+      display: none; }
+    .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont form.ninja-forms-form .ninja-forms-field-error {
+      display: none !important; }
+    .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont form.ninja-forms-form label {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      color: #e7ded0;
+      display: block;
+      float: left;
+      font-size: 18px;
+      line-height: 38px;
+      margin-right: 2%;
+      text-align: center;
+      text-transform: uppercase;
+      width: 23%; }
+      .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont form.ninja-forms-form label .ninja-forms-req-symbol {
+        display: none; }
+    .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont form.ninja-forms-form .ninja-forms-field[type=text], .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont form.ninja-forms-form .ninja-forms-field[type=email] {
+      background-color: #e7ded0;
+      border: 0 none;
+      display: block;
+      float: left;
+      line-height: 28px;
+      padding: 5px 10px;
+      width: 70%; }
+    .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont form.ninja-forms-form .ninja-forms-field.et_pb_button {
+      width: 46%; }
+      .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont form.ninja-forms-form .ninja-forms-field.et_pb_button:hover {
+        padding: 0.5em 2.2em; }
 
 /** End news signup and food detective */
 /** Our brands */
