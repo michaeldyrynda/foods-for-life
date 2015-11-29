@@ -57,21 +57,11 @@ if (isset($_POST['order_details'])) {
             'errors'  => $errors,
         ));
     } else {
-        if (getenv('ORDER_FORM_RECIPIENT')) {
-            $message = get_order_email($input, $items);
-
-            mail(
-                getenv('ORDER_FORM_RECIPIENT'),
-                '[FFL Website] Catering Order Received',
-                $message,
-                join(PHP_EOL, array(
-                    'From: ' . getenv('ORDER_FORM_RECIPIENT'),
-                    'Reply-To: ' . getenv('ORDER_FORM_RECIPIENT'),
-                    'Return-Path: ' . getenv('ORDER_FORM_RECIPIENT'),
-                    'CC: ' . $input['order_email'],
-                ))
-            );
+        if (getenv('ORDER_FORM_RECIPIENT_EMAIL')) {
+            send_order_email($input, $items);
         }
+
+        send_confirmation_email($input, $items);
 
         print json_encode(array( 'success' => true, ));
     }
