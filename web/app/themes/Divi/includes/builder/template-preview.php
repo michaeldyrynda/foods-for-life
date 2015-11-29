@@ -35,8 +35,6 @@ if ( ! current_user_can( 'edit_posts' ) ) {
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 
-		<title><?php wp_title(); ?></title>
-
 		<?php do_action( 'et_head_meta' ); ?>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
