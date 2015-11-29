@@ -40,7 +40,8 @@
     "wpackagist-plugin/pro-categories-widget": "^1.2",
     "wpackagist-plugin/woocommerce": "^2.4",
     "wpackagist-plugin/ninja-forms": "^2.9",
-    "swiftmailer/swiftmailer": "^5.4"
+    "swiftmailer/swiftmailer": "^5.4",
+    "wpackagist-plugin/w3-total-cache": "^0.9.4"
   },
   "extra": {
     "installer-paths": {
