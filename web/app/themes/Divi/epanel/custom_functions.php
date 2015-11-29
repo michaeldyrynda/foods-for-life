@@ -610,7 +610,11 @@ if ( ! function_exists( 'elegant_is_blog_posts_page' ) ){
 // Added for backwards compatibility
 if ( ! function_exists( 'elegant_titles' ) ){
 	function elegant_titles() {
-		wp_title();
+		if ( ! function_exists( 'wp_get_document_title' ) ) {
+			wp_title();
+		} else {
+			echo wp_get_document_title();
+		}
 	}
 }
 
@@ -746,6 +750,7 @@ if ( ! function_exists( 'elegant_description' ) ){
 		#index descriptions
 		$seo_index_description = et_get_option($shortname.'_seo_index_description');
 		if ( $seo_index_description == 'on' ) {
+			$is_pre_4_4 = version_compare( $GLOBALS['wp_version'], '4.4', '<' );
 			$description_added = false;
 
 			if ( is_category() ) {
@@ -760,17 +765,28 @@ if ( ! function_exists( 'elegant_description' ) ){
 			}
 
 			if ( is_archive() && ! $description_added ) {
-				printf( '<meta name="description" content="%1$s" />',
-					esc_attr( sprintf( __( 'Currently viewing archives from %1$s', $themename ),
+				$description_text = $is_pre_4_4
+					? sprintf( __( 'Currently viewing archives from %1$s', $themename ),
 						wp_title( '', false, '' )
-					) )
+					)
+					: get_the_archive_title();
+
+				printf( '<meta name="description" content="%1$s" />',
+					esc_attr( $description_text )
 				);
 
 				$description_added = true;
 			}
 
 			if ( is_search() && ! $description_added ) {
-				echo '<meta name="description" content="' . esc_attr( wp_title('',false,'') ) . '" />';
+				$description_text = $is_pre_4_4
+					? wp_title( '', false, '' )
+					: sprintf(
+						__( 'Search Results for: %s', $themename ),
+						get_search_query()
+					);
+
+				echo '<meta name="description" content="' . esc_attr( $description_text ) . '" />';
 				$description_added = true;
 			}
 		}

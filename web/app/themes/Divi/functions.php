@@ -199,21 +199,18 @@ function et_add_mobile_navigation(){
 }
 add_action( 'et_header_top', 'et_add_mobile_navigation' );
 
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
 /**
  * Manually add <title> tag in head for WordPress 4.1 below for backward compatibility
  * Title tag is automatically added for WordPress 4.1 above via theme support
  * @return void
  */
-function et_add_title_tag_back_compat() {
-	global $wp_version;
-
-	if ( version_compare( $wp_version, '4.1', '<' ) ) {
-		?>
-		<title><?php wp_title(); ?></title>
-		<?php
+	function et_add_title_tag_back_compat() { ?>
+		<title><?php wp_title( '-', true, 'right' ); ?></title>
+<?php
 	}
-}
-add_action( 'wp_head', 'et_add_title_tag_back_compat' );
+	add_action( 'wp_head', 'et_add_title_tag_back_compat' );
+endif;
 
 function et_add_viewport_meta(){
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />';
