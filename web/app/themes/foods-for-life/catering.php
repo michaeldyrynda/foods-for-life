@@ -34,12 +34,20 @@ if (isset($_POST['order_details'])) {
         $errors[] = sprintf('The specified email %s is invalid.', htmlspecialchars($input['order_email']));
     }
 
-    // Validate order date
+    // Validate devliery date and time
     if (! strtotime($input['order_delivery_date'])) {
         $errors[] = 'The specified delivery date is invalid.';
-    } elseif (strtotime($input['order_delivery_date']) < time()) {
+    }
+
+    if (! strtotime($input['order_delivery_time'])) {
+        $errors[] = 'The specified delivery time is invalid.';
+    }
+
+    $delivery_date = sprintf('%s %s', $input['order_delivery_date'], $input['order_delivery_time']);
+
+    if (strtotime($delivery_date) < time()) {
         $errors[] = 'The specified delivery date is in the past.';
-    } elseif (strtotime($input['order_delivery_date']) < strtotime('+2 days')) {
+    } elseif (strtotime($delivery_date) < strtotime('+2 days')) {
         $errors[] = 'For short notice catering, please call us on 08 8227 1300 and we can process your order over the phone.';
     }
 
@@ -147,7 +155,11 @@ $categories = get_catering_posts();
                                     </div>
                                     <div class="order_input">
                                         <label for="order_delivery_date">Delivery Date</label>
-                                        <input id="order_delivery_date" name="order_delivery_date" type="date" required">
+                                        <input id="order_delivery_date" name="order_delivery_date" type="date" required>
+                                    </div>
+                                    <div class="order_input">
+                                        <label for="order_delivery_time">Delivery Time</label>
+                                        <input id="order_delivery_time" name="order_delivery_time" type="time" required>
                                     </div>
                                     <div class="order_input full">
                                         <label for="order-comments">Additional Comments</label>
@@ -346,7 +358,7 @@ $categories = get_catering_posts();
                         $('#submit-order').attr('disabled', 'disabled');
                         update_total();
 
-                        $('html, body').animate({ scrollTop: $('#order-form').offset().top }, 'slow');
+                        $('html, body').animate({ scrollTop: $('#order-form').offset().top - 15 }, 'slow');
                     } else {
                         $('#submit-message').addClass('error');
                         $('#submit-message .title').html('Please check your input and try again');

@@ -57,6 +57,7 @@ function get_order_email($input, $items) {
     $total         = 0;
     $current_date  = date('d/m/Y H:i:s');
     $delivery_date = date('d/m/Y', strtotime($input['order_delivery_date']));
+    $delivery_time = date('h:i A', strtotime($input['order_delivery_time']));
     $message = <<<MESSAGE
 Order Received:       {$current_date}
 Order Name:           {$input['order_name']}
@@ -64,6 +65,7 @@ Order Contact Number: {$input['order_phone']}
 Order Contact Email:  {$input['order_email']}
 Order Address:        {$input['order_delivery']}
 Order Delivery Date:  {$delivery_date}
+Order Delivery Time:  {$delivery_time}
 Additional Comments:  {$input['order_comments']}
 --------
 Order Items:
