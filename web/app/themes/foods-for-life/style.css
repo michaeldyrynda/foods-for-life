@@ -669,6 +669,7 @@ form .order_input {
     margin-top: 10px; }
   form .order_input input[type=text],
   form .order_input input[type=date],
+  form .order_input input[type=time],
   form .order_input textarea {
     background: transparent;
     border: 1px solid #e3dacb;
