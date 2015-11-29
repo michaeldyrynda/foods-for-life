@@ -1,0 +1,59 @@
+.contact {
+  color: $font-color-dark;
+
+  @media screen and (max-width: 479px) {
+    .et_pb_column {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  h1 {
+    @include font-family-primary-bold();
+
+    color: $font-color-secondary;
+    font-size: 20px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+  }
+
+  h2 {
+    @include font-family-primary-bold();
+
+    color: $font-color-dark;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  img {
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  table {
+    color: $font-color-dark;
+    width: 280px;
+
+    th {
+      color: $font-color-dark;
+      padding: 0;
+    }
+  }
+
+  .et_pb_contact_left {
+    p {
+      width: 100%;
+    }
+  }
+
+  .et_pb_contact {
+    p {
+      input,
+      textarea {
+        background-color: #fbf8f4;
+        border: 1px solid #e3dacb;
+        color: $font-color-dark;
+      }
+    }
+  }
+}
