@@ -17,8 +17,8 @@
 
   border-color: $color;
   color: $color;
-  font-size: 14px;
-  padding: 0.5em 2.2em;
+  font-size: 14px !important;
+  padding: 0.5em 2.2em !important;
   text-transform: uppercase;
 
   &:after {
@@ -28,7 +28,7 @@
   &:hover {
     border-color: $color;
     cursor: pointer;
-    padding: 0.5em 3em 0.5em 2.2em;
+    padding: 0.5em 3em 0.5em 2.2em !important;
   }
 }
 
