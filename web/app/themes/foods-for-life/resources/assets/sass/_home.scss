@@ -117,6 +117,10 @@
       @media screen and (min-width: 1550px) {
         width: 390px;
       }
+
+      @media screen and (max-width: 980px) {
+        margin-bottom: 0;
+      }
     }
 
     .et_pb_column .et_pb_promo_button {
@@ -164,6 +168,10 @@
   .et_pb_row {
     margin: 0;
     width: 100%;
+
+    @media screen and (max-width: 980px) {
+      padding: 0;
+    }
   }
 
   .et_pb_column {
@@ -184,6 +192,15 @@
 
     p {
       padding-bottom: 0;
+    }
+  }
+
+  .et_pb_promo {
+    max-width: 50%;
+
+    @media screen and (max-width: 479px),
+                      (min-width: 981px) and (max-width: 1269px) {
+      max-width: 65%;
     }
   }
 

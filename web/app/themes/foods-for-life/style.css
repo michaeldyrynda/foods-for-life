@@ -291,6 +291,9 @@ body {
       @media screen and (min-width: 1550px) {
         .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column_1_3 {
           width: 390px; } }
+      @media screen and (max-width: 980px) {
+        .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column_1_3 {
+          margin-bottom: 0; } }
     .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column .et_pb_promo_button {
       font-family: "Open Sans", sans-serif;
       font-weight: 700;
@@ -348,6 +351,9 @@ body {
   .et_boxed_layout #page-container .home__enews__food-detective .et_pb_row {
     margin: 0;
     width: 100%; }
+    @media screen and (max-width: 980px) {
+      .et_boxed_layout #page-container .home__enews__food-detective .et_pb_row {
+        padding: 0; } }
   .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column {
     height: 400px;
     padding: 40px; }
@@ -363,6 +369,11 @@ body {
     text-transform: uppercase; }
     .et_boxed_layout #page-container .home__enews__food-detective .home__enews__food-detective__heading p {
       padding-bottom: 0; }
+  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_promo {
+    max-width: 50%; }
+    @media screen and (max-width: 479px), (min-width: 981px) and (max-width: 1269px) {
+      .et_boxed_layout #page-container .home__enews__food-detective .et_pb_promo {
+        max-width: 65%; } }
   .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont {
     padding-top: 20px; }
     .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont .ninja-forms-success-msg p {
