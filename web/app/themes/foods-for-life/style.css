@@ -85,6 +85,10 @@ body {
   color: #e7ded0 !important;
   font-size: 15px;
   margin-bottom: 5px; }
+  #main-footer .footer-widget h4.title a {
+    color: #e7ded0; }
+    #main-footer .footer-widget h4.title a:hover {
+      color: rgba(255, 255, 255, 0.7); }
 
 #main-footer .footer-widget:first-child h4.title {
   border-top: 1px solid #e7ded0;
