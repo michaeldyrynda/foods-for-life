@@ -9,6 +9,14 @@
     color: $font-color-primary !important;
     font-size: 15px;
     margin-bottom: 5px;
+
+    a {
+      color: $font-color-primary;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
   }
 
   &:first-child h4.title {

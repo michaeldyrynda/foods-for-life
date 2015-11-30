@@ -85,6 +85,10 @@ body {
   color: #e7ded0 !important;
   font-size: 15px;
   margin-bottom: 5px; }
+  #main-footer .footer-widget h4.title a {
+    color: #e7ded0; }
+    #main-footer .footer-widget h4.title a:hover {
+      color: rgba(255, 255, 255, 0.7); }
 
 #main-footer .footer-widget:first-child h4.title {
   border-top: 1px solid #e7ded0;
@@ -287,6 +291,9 @@ body {
       @media screen and (min-width: 1550px) {
         .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column_1_3 {
           width: 390px; } }
+      @media screen and (max-width: 980px) {
+        .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column_1_3 {
+          margin-bottom: 0; } }
     .et_boxed_layout #page-container .home__calls_to_action .et_pb_row .et_pb_column .et_pb_promo_button {
       font-family: "Open Sans", sans-serif;
       font-weight: 700;
@@ -344,6 +351,9 @@ body {
   .et_boxed_layout #page-container .home__enews__food-detective .et_pb_row {
     margin: 0;
     width: 100%; }
+    @media screen and (max-width: 980px) {
+      .et_boxed_layout #page-container .home__enews__food-detective .et_pb_row {
+        padding: 0; } }
   .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column {
     height: 400px;
     padding: 40px; }
@@ -359,10 +369,11 @@ body {
     text-transform: uppercase; }
     .et_boxed_layout #page-container .home__enews__food-detective .home__enews__food-detective__heading p {
       padding-bottom: 0; }
-  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column:first-child {
-    background: url("./img/bg_enews.jpg") top center no-repeat; }
-  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column:last-child {
-    background: url("./img/bg_food-detective.jpg") top center no-repeat; }
+  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_promo {
+    max-width: 50%; }
+    @media screen and (max-width: 479px), (min-width: 981px) and (max-width: 1269px) {
+      .et_boxed_layout #page-container .home__enews__food-detective .et_pb_promo {
+        max-width: 65%; } }
   .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont {
     padding-top: 20px; }
     .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont .ninja-forms-success-msg p {
@@ -568,8 +579,6 @@ body {
 
 #main-content.ffl-single-post {
   background-color: #e3dacb; }
-  #main-content.ffl-single-post .et_pb_fullwidth_header {
-    background-image: url(/app/uploads/2015/11/header_news.jpg); }
   #main-content.ffl-single-post h1.entry-title {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
@@ -803,6 +812,9 @@ form #order-details .et_pb_promo_button.et_pb_button {
     margin: 0 0 20px;
     position: relative;
     width: 100%; }
+    @media screen and (max-width: 479px) {
+      .et_boxed_layout #page-container .catering__menu .catering__menu-item {
+        min-height: default; } }
     .et_boxed_layout #page-container .catering__menu .catering__menu-item .catering__menu-item__image {
       display: block;
       margin: 0 auto; }
@@ -821,9 +833,9 @@ form #order-details .et_pb_promo_button.et_pb_button {
     @media screen and (min-width: 1550px) {
       .et_boxed_layout #page-container .catering__menu .catering__menu-item {
         margin: 0 2% 2% 0;
-        width: 23%; }
+        width: 23.5%; }
         .et_boxed_layout #page-container .catering__menu .catering__menu-item:nth-of-type(4n) {
-          marin-right: 0; } }
+          margin-right: 0; } }
     .et_boxed_layout #page-container .catering__menu .catering__menu-item h3 {
       font-family: "Open Sans", sans-serif;
       font-weight: 700;
@@ -853,11 +865,14 @@ form #order-details .et_pb_promo_button.et_pb_button {
       .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .form__fields {
         bottom: 15px;
         left: 15px;
+        margin-top: 15px;
         position: absolute;
         width: 205px; }
         @media screen and (max-width: 479px) {
           .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .form__fields {
-            width: 234px; } }
+            left: 0;
+            position: initial;
+            width: 100%; } }
         .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .form__fields input[type=number] {
           background: transparent;
           border: 1px solid #e3dacb;
@@ -865,6 +880,10 @@ form #order-details .et_pb_promo_button.et_pb_button {
           padding: 10px 0 10px 15px;
           text-align: center;
           width: 30%; }
+          @media screen and (max-width: 479px) {
+            .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .form__fields input[type=number] {
+              display: block;
+              width: 100%; } }
         .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .form__fields button {
           font-family: "Open Sans", sans-serif;
           font-weight: 700;
@@ -876,7 +895,9 @@ form #order-details .et_pb_promo_button.et_pb_button {
           text-align: center; }
           @media screen and (max-width: 479px) {
             .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .form__fields button {
-              padding: 9px 37px 10px; } }
+              display: block;
+              padding: 9px 37px 10px;
+              width: 100%; } }
           .et_boxed_layout #page-container .catering__menu .catering__menu-item .item-description .form__fields button:hover {
             cursor: pointer; }
 

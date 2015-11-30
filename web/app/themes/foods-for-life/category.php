@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
-render_heading('FFL News');
+print do_shortcode(et_pb_load_global_module( 913 ));
 
 ?>
 

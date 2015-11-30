@@ -231,6 +231,10 @@ form {
     position: relative;
     width: 100%;
 
+    @media screen and (max-width: 479px) {
+      min-height: default;
+    }
+
     .catering__menu-item__image {
       display: block;
       margin: 0 auto;
@@ -258,10 +262,10 @@ form {
 
     @media screen and (min-width: 1550px) {
       margin: 0 2% 2% 0;
-      width: 23%;
+      width: 23.5%;
 
       &:nth-of-type(4n) {
-        marin-right: 0;
+        margin-right: 0;
       }
     }
 
@@ -312,11 +316,14 @@ form {
       .form__fields {
         bottom: 15px;
         left: 15px;
+        margin-top: 15px;
         position: absolute;
         width: 205px;
 
         @media screen and (max-width: 479px) {
-          width: 234px;
+          left: 0;
+          position: initial;
+          width: 100%;
         }
 
         input[type=number] {
@@ -326,6 +333,11 @@ form {
           padding: 10px 0 10px 15px;
           text-align: center;
           width: 30%;
+
+          @media screen and (max-width: 479px) {
+            display: block;
+            width: 100%;
+          }
         }
 
         button {
@@ -339,7 +351,9 @@ form {
           text-align: center;
 
           @media screen and (max-width: 479px) {
+            display: block;
             padding: 9px 37px 10px;
+            width: 100%;
           }
 
           &:hover {

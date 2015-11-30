@@ -9,7 +9,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 ?>
 
     <div id="main-content" class="ffl-single-post">
-        <?php render_heading('FFL News'); ?>
+        <?php print do_shortcode(et_pb_load_global_module( 913 )); ?>
         <div class="et_pb_section et_pb_section_1 et_pb_with_background et_section_regular">
             <div class="et_pb_row et_pb_row_0 et_pb_equal_columns et_pb_row_3-4_1_4">
                 <div class="et_pb_column et_pb_column_3_4 et_pb_column_0">
