@@ -1,10 +1,6 @@
 #main-content.ffl-single-post {
   background-color: #e3dacb;
 
-  .et_pb_fullwidth_header {
-    background-image: url(/app/uploads/2015/11/header_news.jpg);
-  }
-
   h1.entry-title {
     @include font-family-primary-bold();
 

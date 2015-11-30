@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' );
 
-render_heading('Specials');
+print do_shortcode(et_pb_load_global_module( 911 ));
 ?>
 
 <div class="et_pb_section specials__content et_pb_section_1 et_pb_with_background et_section_regular">

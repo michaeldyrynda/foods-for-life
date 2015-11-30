@@ -53,25 +53,6 @@ function get_catering_fields(&$post) {
 }
 
 
-function render_heading($title) {
-    print <<<HEADING
-<div class="et_pb_section et_pb_fullwidth_section page__heading specials et_pb_section_0 et_section_regular">
-    <section class="et_pb_fullwidth_header et_pb_module et_pb_bg_layout_light et_pb_text_align_left health-foods__heading et_pb_fullwidth_header_0">
-	    <div class="et_pb_fullwidth_header_container left">
-		    <div class="header-content-container center">
-			    <div class="header-content">
-				    <h1>{$title}</h1>
-                </div>
-            </div>
-        </div>
-        <div class="et_pb_fullwidth_header_overlay"></div>
-        <div class="et_pb_fullwidth_header_scroll"></div>
-    </section>
-</div>
-HEADING;
-
-}
-
 function specials_render_contact() {
     print <<<CONTACT
 <div class="specials__contact clearfix">
