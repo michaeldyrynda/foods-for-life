@@ -359,10 +359,6 @@ body {
     text-transform: uppercase; }
     .et_boxed_layout #page-container .home__enews__food-detective .home__enews__food-detective__heading p {
       padding-bottom: 0; }
-  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column:first-child {
-    background: url("./img/bg_enews.jpg") top center no-repeat; }
-  .et_boxed_layout #page-container .home__enews__food-detective .et_pb_column:last-child {
-    background: url("./img/bg_food-detective.jpg") top center no-repeat; }
   .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont {
     padding-top: 20px; }
     .et_boxed_layout #page-container .home__enews__food-detective .ninja-forms-cont .ninja-forms-success-msg p {
