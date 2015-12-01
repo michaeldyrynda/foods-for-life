@@ -74,6 +74,10 @@ body {
     line-height: 1.3em;
     letter-spacing: 0.02em;
     width: 67%; }
+    .page__subheading .et_pb_row .et_pb_column .et_pb_text a {
+      color: #e7ded0 !important; }
+      .page__subheading .et_pb_row .et_pb_column .et_pb_text a:hover {
+        text-decoration: underline; }
 
 /** End font utility classes */
 #main-footer .footer-widget .textwidget {

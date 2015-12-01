@@ -51,6 +51,14 @@
     line-height: 1.3em;
     letter-spacing: 0.02em;
     width: 67%;
+
+    a {
+      color: $font-color-primary !important;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 /** End font utility classes */
