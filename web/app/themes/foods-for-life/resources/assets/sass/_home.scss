@@ -190,6 +190,16 @@
     padding-bottom: 20px;
     text-transform: uppercase;
 
+    @media screen and (max-width: 520px) {
+      font-size: 20px;
+      height: 60px;
+    }
+
+    @media screen and (max-width: 320px) {
+      line-height: 1em;
+      height: 25px;
+    }
+
     p {
       padding-bottom: 0;
     }
@@ -198,9 +208,15 @@
   .et_pb_promo {
     max-width: 50%;
 
-    @media screen and (max-width: 479px),
+    @media screen and (max-width: 520px),
                       (min-width: 981px) and (max-width: 1269px) {
-      max-width: 68%;
+      max-width: 100%;
+
+      .et_pb_promo_description {
+        p {
+          max-width: 68%;
+        }
+      }
     }
   }
 
@@ -243,6 +259,10 @@
         text-transform: uppercase;
         width: 23%;
 
+        @media screen and (max-width: 320px) {
+          font-size: 14px;
+        }
+
         .ninja-forms-req-symbol {
           display: none;
         }
@@ -262,6 +282,10 @@
 
         &.et_pb_button {
           width: 46%;
+
+          @media screen and (max-width: 320px) {
+            width: 100%;
+          }
 
           &:hover {
             padding: 0.5em 2.2em;
