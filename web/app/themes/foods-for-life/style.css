@@ -697,7 +697,9 @@ form .order_input {
     display: block;
     padding: 10px 0 10px 15px;
     width: 100%; }
-  form .order_input input[type=text] {
+  form .order_input input[type=text],
+  form .order_input input[type=date],
+  form .order_input input[type=time] {
     padding: 11px 0 11px 15px; }
 
 form #order-details .order_input_container {
@@ -708,6 +710,9 @@ form #order-details .et_pb_promo {
   background-color: #fbf8f4;
   padding: 20px 60px 40px;
   width: 100%; }
+  @media screen and (max-width: 767px) {
+    form #order-details .et_pb_promo {
+      padding: 0 23px 15px; } }
 
 form #order-details .et_pb_promo_button.et_pb_button {
   font-family: "Open Sans", sans-serif;
@@ -723,6 +728,10 @@ form #order-details .et_pb_promo_button.et_pb_button {
     border-color: #a61f14;
     cursor: pointer;
     padding: 0.5em 3em 0.5em 2.2em !important; }
+  @media screen and (max-width: 767px) {
+    form #order-details .et_pb_promo_button.et_pb_button {
+      display: block;
+      width: 100%; } }
   form #order-details .et_pb_promo_button.et_pb_button:disabled, form #order-details .et_pb_promo_button.et_pb_button:disabled:hover, form #order-details .et_pb_promo_button.et_pb_button[disabled], form #order-details .et_pb_promo_button.et_pb_button[disabled]:hover {
     border-color: #b4a79c;
     color: #b4a79c; }
