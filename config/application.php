@@ -72,3 +72,5 @@ define('DISALLOW_FILE_EDIT', true);
 if (!defined('ABSPATH')) {
   define('ABSPATH', $webroot_dir . '/wp/');
 }
+
+ini_set('date.timezone', getenv('APPLICATION_TIMEZONE'));
