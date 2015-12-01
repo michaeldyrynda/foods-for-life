@@ -1,16 +1,16 @@
 # Application
-web/app/plugins/*
-!web/app/plugins/.gitkeep
-!web/app/plugins/ninja-forms-style/
-!web/app/plugins/ninja-forms-campaign-monitor/
-web/app/mu-plugins/*/
-web/app/upgrade
-web/app/uploads/*
-!web/app/uploads/.gitkeep
+public_html/app/plugins/*
+!public_html/app/plugins/.gitkeep
+!public_html/app/plugins/ninja-forms-style/
+!public_html/app/plugins/ninja-forms-campaign-monitor/
+public_html/app/mu-plugins/*/
+public_html/app/upgrade
+public_html/app/uploads/*
+!public_html/app/uploads/.gitkeep
 
 # WordPress
-web/wp
-web/.htaccess
+public_html/wp
+public_html/.htaccess
 
 # WP-CLI
 db-sync
