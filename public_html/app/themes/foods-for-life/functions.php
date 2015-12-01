@@ -70,7 +70,7 @@ BUTTON;
 }
 
 function build_swift_message($subject, $recipient_name, $recipient_email, $body_html, $body_text, $items_csv = null) {
-    $message = Swift_message::newInstance()
+    $message = Swift_Message::newInstance()
         ->setSubject($subject)
         ->setFrom(array( getenv('ORDER_FORM_SENDER_EMAIL') => getenv('ORDER_FORM_SENDER_NAME'), ))
         ->setTo(array( $recipient_email => $recipient_name, ))
