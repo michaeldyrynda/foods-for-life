@@ -321,6 +321,7 @@ $categories = get_catering_posts();
                     $('#submit-message').removeClass('success');
                     $('#submit-message .title').html('');
                     $('#submit-message .content').html('');
+                    $('#submit-order').attr('disabled', 'disabled').text('Please wait...');
                 },
                 success: function (data) {
                     if (data.success) {
@@ -345,7 +346,7 @@ $categories = get_catering_posts();
                         $('#order-comments').val('');
 
                         $('#no-items').show();
-                        $('#submit-order').attr('disabled', 'disabled');
+                        $('#submit-order').text('Confirm Order');
                         update_total();
 
                         $('html, body').animate({ scrollTop: $('#order-form').offset().top - 15 }, 'slow');
