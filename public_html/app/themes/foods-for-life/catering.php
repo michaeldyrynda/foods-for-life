@@ -346,7 +346,6 @@ $categories = get_catering_posts();
                         $('#order-comments').val('');
 
                         $('#no-items').show();
-                        $('#submit-order').text('Confirm Order');
                         update_total();
 
                         $('html, body').animate({ scrollTop: $('#order-form').offset().top - 15 }, 'slow');
@@ -364,6 +363,7 @@ $categories = get_catering_posts();
                         $('html, body').animate({ scrollTop: $('#order-form').offset().top - 15 }, 'slow');
                     }
 
+                    $('#submit-order').removeAttr('disabled').text('Confirm Order');
                     $('#submit-message').show();
                 }
             });
