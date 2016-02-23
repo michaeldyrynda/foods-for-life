@@ -14,4 +14,4 @@ function et_setup_builder() {
 
 	et_pb_register_posttypes();
 }
-add_action( 'init', 'et_setup_builder' );
+add_action( 'init', 'et_setup_builder', 0 );

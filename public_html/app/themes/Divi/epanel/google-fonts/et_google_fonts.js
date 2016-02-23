@@ -108,6 +108,11 @@
 
 		maybe_request_font: function( font_name, font_option ) {
 			if ( font_option.val() === 'none' ) return;
+
+			if ( font_option.data( 'standard' ) === 'on' ) {
+				return;
+			}
+
 			var font_styles = typeof font_option.data( 'parent_styles' ) !== 'undefined' && '' !== font_option.data( 'parent_styles' ) ? ':' + font_option.data( 'parent_styles' ) : '',
 				subset = typeof font_option.data( 'parent_subset' ) !== 'undefined' && '' !== font_option.data( 'parent_subset' ) ? '&' + subset : '';
 
@@ -172,7 +177,8 @@
 			et_body_font_option_name = '[body_font]',
 			et_buttons_font_option_name = '[all_buttons_font]',
 			et_secondary_nav_font_option_name = '[secondary_nav_font]',
-			et_primary_nav_font_option_name = '[primary_nav_font]';
+			et_primary_nav_font_option_name = '[primary_nav_font]',
+			et_slide_nav_font_option_name = '[slide_nav_font]';
 
 		if ( typeof et_google_fonts !== 'undefined' && et_google_fonts.options_in_one_row == 0 ) {
 			et_heading_font_option_name = '_heading_font';
@@ -180,6 +186,7 @@
 			et_buttons_font_option_name = '_all_buttons_font';
 			et_primary_nav_font_option_name = '_primary_nav_font';
 			et_secondary_nav_font_option_nam = '_secondary_nav_font';
+			et_slide_nav_font_option_name = '_slide_nav_font';
 		}
 
 		$('select[data-customize-setting-link$="' + et_heading_font_option_name + '"]').et_google_fonts({apply_font_to	: 'h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a', used_for : 'et_heading_font'});
@@ -187,5 +194,6 @@
 		$('select[data-customize-setting-link$="' + et_buttons_font_option_name + '"]').et_google_fonts({apply_font_to	: '.et_pb_button', used_for : 'et_all_buttons_font'});
 		$('select[data-customize-setting-link$="' + et_primary_nav_font_option_name + '"]').et_google_fonts({apply_font_to	: '#main-header, #et-top-navigation', used_for : 'et_primary_nav_font'});
 		$('select[data-customize-setting-link$="' + et_secondary_nav_font_option_name + '"]').et_google_fonts({apply_font_to	: '#top-header .container', used_for : 'et_secondary_nav_font'});
+		$('select[data-customize-setting-link$="' + et_slide_nav_font_option_name + '"]').et_google_fonts({apply_font_to	: '.et_slide_in_menu_container, .et_slide_in_menu_container .et-search-field', used_for : 'et_slide_nav_font'});
 	} );
 })(jQuery)

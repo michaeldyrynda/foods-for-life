@@ -2,7 +2,7 @@
 
 /********* Shortcodes v.3.0 ************/
 
-define( 'ET_SHORTCODES_VERSION', '3.0' );
+if ( ! defined( 'ET_SHORTCODES_VERSION' ) ) define( 'ET_SHORTCODES_VERSION', '3.0' );
 if ( ! defined( 'ET_SHORTCODES_DIR' ) ) define( 'ET_SHORTCODES_DIR', get_template_directory_uri() . '/epanel/shortcodes' );
 
 add_action('wp_enqueue_scripts', 'et_shortcodes_css_and_js');
@@ -12,7 +12,7 @@ function et_shortcodes_css_and_js(){
 
 	wp_enqueue_style( 'et-shortcodes-css', ET_SHORTCODES_DIR . '/css/shortcodes.css', false, ET_SHORTCODES_VERSION, 'all' );
 	wp_register_script( 'et-shortcodes-js', ET_SHORTCODES_DIR . "/js/et_shortcodes_frontend{$suffix}.js", array('jquery'), ET_SHORTCODES_VERSION, false );
-	wp_localize_script( 'et-shortcodes-js', 'et_shortcodes_strings', array( 'previous' => __( 'Previous', $themename ), 'next' => __( 'Next', $themename ) ) );
+	wp_localize_script( 'et-shortcodes-js', 'et_shortcodes_strings', array( 'previous' => esc_html__( 'Previous', $themename ), 'next' => esc_html__( 'Next', $themename ) ) );
 }
 
 function et_add_simple_buttons(){
@@ -349,7 +349,7 @@ function et_learnmore($atts, $content = null) {
 	global $themename;
 
 	extract(shortcode_atts(array(
-				"caption" => __( 'Click here to learn more', $themename ),
+				"caption" => esc_html__( 'Click here to learn more', $themename ),
 				"state" => 'close',
 				"id" => '',
 				"class" => ''
@@ -729,7 +729,7 @@ function et_pricing($atts, $content = null) {
 		"desc" => "",
 		"url" => "#",
 		"window" => "",
-		"moretext" => __( 'Join Now', $themename ),
+		"moretext" => esc_html__( 'Join Now', $themename ),
 		"type" => "small",
 		"currency" => "$"
 	), $atts, 'pricing'));

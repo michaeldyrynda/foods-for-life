@@ -1,15 +1,15 @@
 <?php class AdvWidget extends WP_Widget
 {
 	function __construct(){
-		$widget_ops = array( 'description' => __( 'Displays Advertisements', 'Divi' ) );
+		$widget_ops = array( 'description' => esc_html__( 'Displays Advertisements', 'Divi' ) );
 		$control_ops = array('width' => 400, 'height' => 500);
-		parent::__construct( false, $name = __( 'ET Advertisement', 'Divi' ), $widget_ops, $control_ops );
+		parent::__construct( false, $name = esc_html__( 'ET Advertisement', 'Divi' ), $widget_ops, $control_ops );
 	}
 
 	/* Displays the Widget in the front-end */
 	function widget($args, $instance){
 		extract($args);
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Advertisement', 'Divi' ) : esc_html( $instance['title'] ) );
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? esc_html__( 'Advertisement', 'Divi' ) : esc_html( $instance['title'] ) );
 		$use_relpath = isset($instance['use_relpath']) ? $instance['use_relpath'] : false;
 		$new_window = isset($instance['new_window']) ? $instance['new_window'] : false;
 		$bannerPath[1] = empty($instance['bannerOnePath']) ? '' : esc_attr($instance['bannerOnePath']);
@@ -169,7 +169,7 @@ endwhile; ?>
 		$bannerAlt[8] = esc_attr($instance['bannerEightAlt']);
 
 		# Title
-		echo '<p><label for="' . $this->get_field_id('title') . '">' . __( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $title . '" /></p>'; ?>
+		echo '<p><label for="' . $this->get_field_id('title') . '">' . esc_html__( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $title . '" /></p>'; ?>
 
 		<input class="checkbox" type="checkbox" <?php checked($instance['use_relpath'], true) ?> id="<?php echo $this->get_field_id('use_relpath'); ?>" name="<?php echo $this->get_field_name('use_relpath'); ?>" />
 		<label for="<?php echo $this->get_field_id('use_relpath'); ?>"><?php esc_html_e( 'Use Relative Image Paths', 'Divi' ); ?></label><br />
@@ -177,69 +177,69 @@ endwhile; ?>
 		<label for="<?php echo $this->get_field_id('new_window'); ?>"><?php esc_html_e( 'Open in a new window', 'Divi' ); ?></label><br /><br />
 
 		<?php	# Banner #1 Image
-		echo '<p><label for="' . $this->get_field_id('bannerOnePath') . '">' . __( 'Banner', 'Divi' ) . ' #1 ' . __( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerOnePath') . '" name="' . $this->get_field_name('bannerOnePath') . '" type="text" value="' . $bannerPath[1] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerOnePath') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #1 ' . esc_html__( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerOnePath') . '" name="' . $this->get_field_name('bannerOnePath') . '" type="text" value="' . $bannerPath[1] . '" /></p>';
 		# Banner #1 Url
-		echo '<p><label for="' . $this->get_field_id('bannerOneUrl') . '">' . __( 'Banner', 'Divi' ) . ' #1 ' . __( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerOneUrl') . '" name="' . $this->get_field_name('bannerOneUrl') . '" type="text" value="' . $bannerUrl[1] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerOneUrl') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #1 ' . esc_html__( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerOneUrl') . '" name="' . $this->get_field_name('bannerOneUrl') . '" type="text" value="' . $bannerUrl[1] . '" /></p>';
 		# Banner #1 Title
-		echo '<p><label for="' . $this->get_field_id('bannerOneTitle') . '">' . __( 'Banner', 'Divi' ) . ' #1 ' . __( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerOneTitle') . '" name="' . $this->get_field_name('bannerOneTitle') . '" type="text" value="' . $bannerTitle[1] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerOneTitle') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #1 ' . esc_html__( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerOneTitle') . '" name="' . $this->get_field_name('bannerOneTitle') . '" type="text" value="' . $bannerTitle[1] . '" /></p>';
 		# Banner #1 Alt
-		echo '<p><label for="' . $this->get_field_id('bannerOneAlt') . '">' . __( 'Banner', 'Divi' ) . ' #1 ' . __( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerOneAlt') . '" name="' . $this->get_field_name('bannerOneAlt') . '" type="text" value="' . $bannerAlt[1] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerOneAlt') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #1 ' . esc_html__( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerOneAlt') . '" name="' . $this->get_field_name('bannerOneAlt') . '" type="text" value="' . $bannerAlt[1] . '" /></p>';
 		# Banner #2 Image
-		echo '<p><label for="' . $this->get_field_id('bannerTwoPath') . '">' . __( 'Banner', 'Divi' ) . ' #2 ' . __( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerTwoPath') . '" name="' . $this->get_field_name('bannerTwoPath') . '" type="text" value="' . $bannerPath[2] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerTwoPath') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #2 ' . esc_html__( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerTwoPath') . '" name="' . $this->get_field_name('bannerTwoPath') . '" type="text" value="' . $bannerPath[2] . '" /></p>';
 		# Banner #2 Url
-		echo '<p><label for="' . $this->get_field_id('bannerTwoUrl') . '">' . __( 'Banner', 'Divi' ) . ' #2 ' . __( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerTwoUrl') . '" name="' . $this->get_field_name('bannerTwoUrl') . '" type="text" value="' . $bannerUrl[2] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerTwoUrl') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #2 ' . esc_html__( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerTwoUrl') . '" name="' . $this->get_field_name('bannerTwoUrl') . '" type="text" value="' . $bannerUrl[2] . '" /></p>';
 		# Banner #2 Title
-		echo '<p><label for="' . $this->get_field_id('bannerTwoTitle') . '">' . __( 'Banner', 'Divi' ) . ' #2 ' . __( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerTwoTitle') . '" name="' . $this->get_field_name('bannerTwoTitle') . '" type="text" value="' . $bannerTitle[2] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerTwoTitle') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #2 ' . esc_html__( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerTwoTitle') . '" name="' . $this->get_field_name('bannerTwoTitle') . '" type="text" value="' . $bannerTitle[2] . '" /></p>';
 		# Banner #2 Alt
-		echo '<p><label for="' . $this->get_field_id('bannerTwoAlt') . '">' . __( 'Banner', 'Divi' ) . ' #2 ' . __( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerTwoAlt') . '" name="' . $this->get_field_name('bannerTwoAlt') . '" type="text" value="' . $bannerAlt[2] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerTwoAlt') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #2 ' . esc_html__( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerTwoAlt') . '" name="' . $this->get_field_name('bannerTwoAlt') . '" type="text" value="' . $bannerAlt[2] . '" /></p>';
 		# Banner #3 Image
-		echo '<p><label for="' . $this->get_field_id('bannerThreePath') . '">' . __( 'Banner', 'Divi' ) . ' #3 ' . __( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerThreePath') . '" name="' . $this->get_field_name('bannerThreePath') . '" type="text" value="' . $bannerPath[3] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerThreePath') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #3 ' . esc_html__( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerThreePath') . '" name="' . $this->get_field_name('bannerThreePath') . '" type="text" value="' . $bannerPath[3] . '" /></p>';
 		# Banner #3 Url
-		echo '<p><label for="' . $this->get_field_id('bannerThreeUrl') . '">' . __( 'Banner', 'Divi' ) . ' #3 ' . __( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerThreeUrl') . '" name="' . $this->get_field_name('bannerThreeUrl') . '" type="text" value="' . $bannerUrl[3] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerThreeUrl') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #3 ' . esc_html__( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerThreeUrl') . '" name="' . $this->get_field_name('bannerThreeUrl') . '" type="text" value="' . $bannerUrl[3] . '" /></p>';
 		# Banner #3 Title
-		echo '<p><label for="' . $this->get_field_id('bannerThreeTitle') . '">' . __( 'Banner', 'Divi' ) . ' #3 ' . __( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerThreeTitle') . '" name="' . $this->get_field_name('bannerThreeTitle') . '" type="text" value="' . $bannerTitle[3] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerThreeTitle') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #3 ' . esc_html__( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerThreeTitle') . '" name="' . $this->get_field_name('bannerThreeTitle') . '" type="text" value="' . $bannerTitle[3] . '" /></p>';
 		# Banner #3 Alt
-		echo '<p><label for="' . $this->get_field_id('bannerThreeAlt') . '">' . __( 'Banner', 'Divi' ) . ' #3 ' . __( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerThreeAlt') . '" name="' . $this->get_field_name('bannerThreeAlt') . '" type="text" value="' . $bannerAlt[3] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerThreeAlt') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #3 ' . esc_html__( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerThreeAlt') . '" name="' . $this->get_field_name('bannerThreeAlt') . '" type="text" value="' . $bannerAlt[3] . '" /></p>';
 		# Banner #4 Image
-		echo '<p><label for="' . $this->get_field_id('bannerFourPath') . '">' . __( 'Banner', 'Divi' ) . ' #4 ' . __( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFourPath') . '" name="' . $this->get_field_name('bannerFourPath') . '" type="text" value="' . $bannerPath[4] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerFourPath') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #4 ' . esc_html__( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFourPath') . '" name="' . $this->get_field_name('bannerFourPath') . '" type="text" value="' . $bannerPath[4] . '" /></p>';
 		# Banner #4 Url
-		echo '<p><label for="' . $this->get_field_id('bannerFourUrl') . '">' . __( 'Banner', 'Divi' ) . ' #4 ' . __( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFourUrl') . '" name="' . $this->get_field_name('bannerFourUrl') . '" type="text" value="' . $bannerUrl[4] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerFourUrl') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #4 ' . esc_html__( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFourUrl') . '" name="' . $this->get_field_name('bannerFourUrl') . '" type="text" value="' . $bannerUrl[4] . '" /></p>';
 		# Banner #4 Title
-		echo '<p><label for="' . $this->get_field_id('bannerFourTitle') . '">' . __( 'Banner', 'Divi' ) . ' #4 ' . __( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFourTitle') . '" name="' . $this->get_field_name('bannerFourTitle') . '" type="text" value="' . $bannerTitle[4] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerFourTitle') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #4 ' . esc_html__( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFourTitle') . '" name="' . $this->get_field_name('bannerFourTitle') . '" type="text" value="' . $bannerTitle[4] . '" /></p>';
 		# Banner #4 Alt
-		echo '<p><label for="' . $this->get_field_id('bannerFourAlt') . '">' . __( 'Banner', 'Divi' ) . ' #4 ' . __( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFourAlt') . '" name="' . $this->get_field_name('bannerFourAlt') . '" type="text" value="' . $bannerAlt[4] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerFourAlt') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #4 ' . esc_html__( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFourAlt') . '" name="' . $this->get_field_name('bannerFourAlt') . '" type="text" value="' . $bannerAlt[4] . '" /></p>';
 		# Banner #5 Image
-		echo '<p><label for="' . $this->get_field_id('bannerFivePath') . '">' . __( 'Banner', 'Divi' ) . ' #5 ' . __( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFivePath') . '" name="' . $this->get_field_name('bannerFivePath') . '" type="text" value="' . $bannerPath[5] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerFivePath') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #5 ' . esc_html__( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFivePath') . '" name="' . $this->get_field_name('bannerFivePath') . '" type="text" value="' . $bannerPath[5] . '" /></p>';
 		# Banner #5 Url
-		echo '<p><label for="' . $this->get_field_id('bannerFiveUrl') . '">' . __( 'Banner', 'Divi' ) . ' #5 ' . __( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFiveUrl') . '" name="' . $this->get_field_name('bannerFiveUrl') . '" type="text" value="' . $bannerUrl[5] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerFiveUrl') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #5 ' . esc_html__( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFiveUrl') . '" name="' . $this->get_field_name('bannerFiveUrl') . '" type="text" value="' . $bannerUrl[5] . '" /></p>';
 		# Banner #5 Title
-		echo '<p><label for="' . $this->get_field_id('bannerFiveTitle') . '">' . __( 'Banner', 'Divi' ) . ' #5 ' . __( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFiveTitle') . '" name="' . $this->get_field_name('bannerFiveTitle') . '" type="text" value="' . $bannerTitle[5] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerFiveTitle') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #5 ' . esc_html__( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFiveTitle') . '" name="' . $this->get_field_name('bannerFiveTitle') . '" type="text" value="' . $bannerTitle[5] . '" /></p>';
 		# Banner #5 Alt
-		echo '<p><label for="' . $this->get_field_id('bannerFiveAlt') . '">' . __( 'Banner', 'Divi' ) . ' #5 ' . __( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFiveAlt') . '" name="' . $this->get_field_name('bannerFiveAlt') . '" type="text" value="' . $bannerAlt[5] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerFiveAlt') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #5 ' . esc_html__( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerFiveAlt') . '" name="' . $this->get_field_name('bannerFiveAlt') . '" type="text" value="' . $bannerAlt[5] . '" /></p>';
 		# Banner #6 Image
-		echo '<p><label for="' . $this->get_field_id('bannerSixPath') . '">' . __( 'Banner', 'Divi' ) . ' #6 ' . __( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSixPath') . '" name="' . $this->get_field_name('bannerSixPath') . '" type="text" value="' . $bannerPath[6] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerSixPath') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #6 ' . esc_html__( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSixPath') . '" name="' . $this->get_field_name('bannerSixPath') . '" type="text" value="' . $bannerPath[6] . '" /></p>';
 		# Banner #6 Url
-		echo '<p><label for="' . $this->get_field_id('bannerSixUrl') . '">' . __( 'Banner', 'Divi' ) . ' #6 ' . __( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSixUrl') . '" name="' . $this->get_field_name('bannerSixUrl') . '" type="text" value="' . $bannerUrl[6] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerSixUrl') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #6 ' . esc_html__( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSixUrl') . '" name="' . $this->get_field_name('bannerSixUrl') . '" type="text" value="' . $bannerUrl[6] . '" /></p>';
 		# Banner #6 Title
-		echo '<p><label for="' . $this->get_field_id('bannerSixTitle') . '">' . __( 'Banner', 'Divi' ) . ' #6 ' . __( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSixTitle') . '" name="' . $this->get_field_name('bannerSixTitle') . '" type="text" value="' . $bannerTitle[6] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerSixTitle') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #6 ' . esc_html__( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSixTitle') . '" name="' . $this->get_field_name('bannerSixTitle') . '" type="text" value="' . $bannerTitle[6] . '" /></p>';
 		# Banner #6 Alt
-		echo '<p><label for="' . $this->get_field_id('bannerSixAlt') . '">' . __( 'Banner', 'Divi' ) . ' #6 ' . __( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSixAlt') . '" name="' . $this->get_field_name('bannerSixAlt') . '" type="text" value="' . $bannerAlt[6] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerSixAlt') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #6 ' . esc_html__( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSixAlt') . '" name="' . $this->get_field_name('bannerSixAlt') . '" type="text" value="' . $bannerAlt[6] . '" /></p>';
 		# Banner #7 Image
-		echo '<p><label for="' . $this->get_field_id('bannerSevenPath') . '">' . __( 'Banner', 'Divi' ) . ' #7 ' . __( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSevenPath') . '" name="' . $this->get_field_name('bannerSevenPath') . '" type="text" value="' . $bannerPath[7] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerSevenPath') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #7 ' . esc_html__( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSevenPath') . '" name="' . $this->get_field_name('bannerSevenPath') . '" type="text" value="' . $bannerPath[7] . '" /></p>';
 		# Banner #7 Url
-		echo '<p><label for="' . $this->get_field_id('bannerSevenUrl') . '">' . __( 'Banner', 'Divi' ) . ' #7 ' . __( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSevenUrl') . '" name="' . $this->get_field_name('bannerSevenUrl') . '" type="text" value="' . $bannerUrl[7] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerSevenUrl') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #7 ' . esc_html__( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSevenUrl') . '" name="' . $this->get_field_name('bannerSevenUrl') . '" type="text" value="' . $bannerUrl[7] . '" /></p>';
 		# Banner #7 Title
-		echo '<p><label for="' . $this->get_field_id('bannerSevenTitle') . '">' . __( 'Banner', 'Divi' ) . ' #7 ' . __( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSevenTitle') . '" name="' . $this->get_field_name('bannerSevenTitle') . '" type="text" value="' . $bannerTitle[7] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerSevenTitle') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #7 ' . esc_html__( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSevenTitle') . '" name="' . $this->get_field_name('bannerSevenTitle') . '" type="text" value="' . $bannerTitle[7] . '" /></p>';
 		# Banner #7 Alt
-		echo '<p><label for="' . $this->get_field_id('bannerSevenAlt') . '">' . __( 'Banner', 'Divi' ) . ' #7 ' . __( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSevenAlt') . '" name="' . $this->get_field_name('bannerSevenAlt') . '" type="text" value="' . $bannerAlt[7] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerSevenAlt') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #7 ' . esc_html__( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerSevenAlt') . '" name="' . $this->get_field_name('bannerSevenAlt') . '" type="text" value="' . $bannerAlt[7] . '" /></p>';
 		# Banner #8 Image
-		echo '<p><label for="' . $this->get_field_id('bannerEightPath') . '">' . __( 'Banner', 'Divi' ) . ' #8 ' . __( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerEightPath') . '" name="' . $this->get_field_name('bannerEightPath') . '" type="text" value="' . $bannerPath[8] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerEightPath') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #8 ' . esc_html__( 'Image', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerEightPath') . '" name="' . $this->get_field_name('bannerEightPath') . '" type="text" value="' . $bannerPath[8] . '" /></p>';
 		# Banner #8 Url
-		echo '<p><label for="' . $this->get_field_id('bannerEightUrl') . '">' . __( 'Banner', 'Divi' ) . ' #8 ' . __( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerEightUrl') . '" name="' . $this->get_field_name('bannerEightUrl') . '" type="text" value="' . $bannerUrl[8] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerEightUrl') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #8 ' . esc_html__( 'Url', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerEightUrl') . '" name="' . $this->get_field_name('bannerEightUrl') . '" type="text" value="' . $bannerUrl[8] . '" /></p>';
 		# Banner #8 Title
-		echo '<p><label for="' . $this->get_field_id('bannerEightTitle') . '">' . __( 'Banner', 'Divi' ) . ' #8 ' . __( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerEightTitle') . '" name="' . $this->get_field_name('bannerEightTitle') . '" type="text" value="' . $bannerTitle[8] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerEightTitle') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #8 ' . esc_html__( 'Title', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerEightTitle') . '" name="' . $this->get_field_name('bannerEightTitle') . '" type="text" value="' . $bannerTitle[8] . '" /></p>';
 		# Banner #8 Alt
-		echo '<p><label for="' . $this->get_field_id('bannerEightAlt') . '">' . __( 'Banner', 'Divi' ) . ' #8 ' . __( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerEightAlt') . '" name="' . $this->get_field_name('bannerEightAlt') . '" type="text" value="' . $bannerAlt[8] . '" /></p>';
+		echo '<p><label for="' . $this->get_field_id('bannerEightAlt') . '">' . esc_html__( 'Banner', 'Divi' ) . ' #8 ' . esc_html__( 'Alt', 'Divi' ) . ':' . '</label><input class="widefat" id="' . $this->get_field_id('bannerEightAlt') . '" name="' . $this->get_field_name('bannerEightAlt') . '" type="text" value="' . $bannerAlt[8] . '" /></p>';
 		echo '<p><small>' . esc_html__( "If you don't want to display some banners - leave approptiate fields blank", 'Divi' ) . '.</small></p>';
 	}
 

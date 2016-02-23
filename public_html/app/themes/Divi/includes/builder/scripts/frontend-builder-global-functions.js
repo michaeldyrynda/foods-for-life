@@ -64,12 +64,16 @@
 		});
 	}
 
-	window.et_duplicate_menu = function( menu, append_to, menu_id, menu_class ){
+	window.et_duplicate_menu = function( menu, append_to, menu_id, menu_class, menu_click_event ){
 		append_to.each( function() {
 			var $this_menu = $(this),
 				$cloned_nav;
 
-			menu.clone().attr('id',menu_id).removeClass().attr('class',menu_class).appendTo( $this_menu );
+			// make this function work with existing menus, without cloning
+			if ( '' !== menu ) {
+				menu.clone().attr('id',menu_id).removeClass().attr('class',menu_class).appendTo( $this_menu );
+			}
+
 			$cloned_nav = $this_menu.find('> ul');
 			$cloned_nav.find('.menu_slide').remove();
 			$cloned_nav.find('li:first').addClass('et_first_mobile_item');
@@ -78,20 +82,18 @@
 				$this_menu.trigger( 'click' );
 			} );
 
-			$this_menu.on( 'click', function(){
-				if ( $(this).hasClass('closed') ){
-					$(this).removeClass( 'closed' ).addClass( 'opened' );
-					$cloned_nav.slideDown( 500 );
-				} else {
-					$(this).removeClass( 'opened' ).addClass( 'closed' );
-					$cloned_nav.slideUp( 500 );
-				}
-				return false;
-			} );
-
-			$this_menu.on( 'click', 'a', function(event){
-				event.stopPropagation();
-			} );
+			if ( 'no_click_event' !== menu_click_event ) {
+				$this_menu.on( 'click', '.mobile_menu_bar', function(){
+					if ( $this_menu.hasClass('closed') ){
+						$this_menu.removeClass( 'closed' ).addClass( 'opened' );
+						$cloned_nav.stop().slideDown( 500 );
+					} else {
+						$this_menu.removeClass( 'opened' ).addClass( 'closed' );
+						$cloned_nav.stop().slideUp( 500 );
+					}
+					return false;
+				} );
+			}
 		} );
 
 		$('#mobile_menu .centered-inline-logo-wrap').remove();

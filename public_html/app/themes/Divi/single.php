@@ -15,7 +15,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php if (et_get_option('divi_integration_single_top') <> '' && et_get_option('divi_integrate_singletop_enable') == 'on') echo(et_get_option('divi_integration_single_top')); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' ); ?>>
+				<?php
+					$et_pb_has_comments_module = has_shortcode( get_the_content(), 'et_pb_comments' );
+					$additional_class = $et_pb_has_comments_module ? ' et_pb_no_comments_section' : '';
+				?>
+
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' . $additional_class ); ?>>
 					<?php if ( ( 'off' !== $show_default_title && $is_page_builder_used ) || ! $is_page_builder_used ) { ?>
 						<div class="et_post_meta_wrapper">
 							<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -100,9 +105,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 					<div class="entry-content">
 					<?php
+						do_action( 'et_before_content' );
+
 						the_content();
 
-						wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
+						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
 					?>
 					</div> <!-- .entry-content -->
 					<div class="et_post_meta_wrapper">
@@ -118,8 +125,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				?>
 
 					<?php
-						if ( ( comments_open() || get_comments_number() ) && 'on' == et_get_option( 'divi_show_postcomments', 'on' ) )
+						if ( ( comments_open() || get_comments_number() ) && 'on' == et_get_option( 'divi_show_postcomments', 'on' ) && ! $et_pb_has_comments_module ) {
 							comments_template( '', true );
+						}
 					?>
 					</div> <!-- .et_post_meta_wrapper -->
 				</article> <!-- .et_pb_post -->

@@ -21,7 +21,7 @@
 	// Build preview screen
 	ET_PageBuilder_Preview = function( e ) {
 		// Create form on the fly
-		var $form = $('<form id="preview-data-submission" method="POST"></form>'),
+		var $form = $('<form id="preview-data-submission" method="POST" style="display: none;"></form>'),
 			value,
 			data = e.data,
 			msie = document.documentMode;

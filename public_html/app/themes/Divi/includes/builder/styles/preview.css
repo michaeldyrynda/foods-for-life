@@ -440,3 +440,15 @@ body.et-pb-preview #main-content .container:before {
 		opacity: 1;
 	}
 }
+
+/**
+ * Plugins Support
+ */
+
+/* Monarch */
+.et_monarch .et_social_inline,
+.et_monarch .et_social_flyin,
+.et_monarch .et_social_popup,
+.et_monarch .et_social_heading {
+	display: none !important;
+}

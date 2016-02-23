@@ -37,7 +37,7 @@ class ET_Global_Settings {
 			'et_pb_tabs-tab_font_size'                        => $font_defaults['size'],
 			'et_pb_tabs-tab_line_height'                      => $font_defaults['line_height'],
 			'et_pb_tabs-tab_letter_spacing'                   => $font_defaults['letter_spacing'],
-			'et_pb_tabs-title_font_size'                       => $font_defaults['size'],
+			'et_pb_tabs-title_font_size'                      => $font_defaults['size'],
 			'et_pb_tabs-body_font_size'                       => $font_defaults['size'],
 			'et_pb_tabs-body_line_height'                     => $font_defaults['line_height'],
 			'et_pb_tabs-body_letter_spacing'                  => $font_defaults['letter_spacing'],

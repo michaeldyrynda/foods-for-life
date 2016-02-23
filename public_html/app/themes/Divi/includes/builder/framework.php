@@ -25,21 +25,22 @@ function et_builder_load_modules_styles() {
 
 	wp_enqueue_style( 'magnific-popup', ET_BUILDER_URI . '/styles/magnific_popup.css', array(), ET_BUILDER_VERSION );
 
-	wp_enqueue_script( 'et-builder-modules-script', ET_BUILDER_URI . '/scripts/frontend-builder-scripts.js', array( 'jquery' ), ET_BUILDER_VERSION, true );
+	wp_enqueue_script( 'et-jquery-touch-mobile', ET_BUILDER_URI . '/scripts/jquery.mobile.custom.min.js', array( 'jquery' ), ET_BUILDER_VERSION, true );
+	wp_enqueue_script( 'et-builder-modules-script', ET_BUILDER_URI . '/scripts/frontend-builder-scripts.js', array( 'jquery', 'et-jquery-touch-mobile' ), ET_BUILDER_VERSION, true );
 	wp_localize_script( 'et-builder-modules-script', 'et_pb_custom', array(
 		'ajaxurl'                => admin_url( 'admin-ajax.php' ),
 		'images_uri'             => get_template_directory_uri() . '/images',
 		'builder_images_uri'     => ET_BUILDER_URI . '/images',
-		'et_load_nonce'          => wp_create_nonce( 'et_load_nonce' ),
-		'subscription_failed'    => __( 'Please, check the fields below to make sure you entered the correct information.', 'Divi' ),
-		'fill_message'           => esc_html__( 'Please, fill in the following fields:', 'Divi' ),
-		'contact_error_message'  => esc_html__( 'Please, fix the following errors:', 'Divi' ),
-		'invalid'                => esc_html__( 'Invalid email', 'Divi' ),
-		'captcha'                => esc_html__( 'Captcha', 'Divi' ),
-		'prev'                   => esc_html__( 'Prev', 'Divi' ),
-		'previous'               => esc_html__( 'Previous', 'Divi' ),
-		'next'                   => esc_html__( 'Next', 'Divi' ),
-		'wrong_captcha'          => esc_html__( 'You entered the wrong number in captcha.', 'Divi' ),
+		'et_frontend_nonce'      => wp_create_nonce( 'et_frontend_nonce' ),
+		'subscription_failed'    => esc_html__( 'Please, check the fields below to make sure you entered the correct information.', 'et_builder' ),
+		'fill_message'           => esc_html__( 'Please, fill in the following fields:', 'et_builder' ),
+		'contact_error_message'  => esc_html__( 'Please, fix the following errors:', 'et_builder' ),
+		'invalid'                => esc_html__( 'Invalid email', 'et_builder' ),
+		'captcha'                => esc_html__( 'Captcha', 'et_builder' ),
+		'prev'                   => esc_html__( 'Prev', 'et_builder' ),
+		'previous'               => esc_html__( 'Previous', 'et_builder' ),
+		'next'                   => esc_html__( 'Next', 'et_builder' ),
+		'wrong_captcha'          => esc_html__( 'You entered the wrong number in captcha.', 'et_builder' ),
 		'is_builder_plugin_used' => et_is_builder_plugin_active(),
 		'is_divi_theme_used'     => function_exists( 'et_divi_fonts_url' ),
 		'widget_search_selector' => apply_filters( 'et_pb_widget_search_selector', '.widget_search' ),
@@ -78,7 +79,7 @@ function et_builder_load_modules_styles() {
 		wp_localize_script( 'et-builder-preview-script', 'et_preview_params', array(
 			'preview_origin' => esc_url( $preview_origin ),
 			'alert_origin_not_matched' => sprintf(
-				esc_html__( 'Unauthorized access. Preview cannot be accessed outside %1$s.', 'Divi' ),
+				esc_html__( 'Unauthorized access. Preview cannot be accessed outside %1$s.', 'et_builder' ),
 				esc_url( home_url( '', $preview_scheme ) )
 			),
 		) );
@@ -125,11 +126,12 @@ if ( ! function_exists( 'et_builder_add_main_elements' ) ) :
 function et_builder_add_main_elements() {
 	require ET_BUILDER_DIR . 'main-structure-elements.php';
 	require ET_BUILDER_DIR . 'main-modules.php';
+	do_action( 'et_builder_ready' );
 }
 endif;
 
-if ( ! function_exists( 'et_builder_load_framework' ) ) :
-function et_builder_load_framework() {
+if ( ! function_exists( 'et_builder_should_load_framework' ) ) :
+function et_builder_should_load_framework() {
 	global $pagenow;
 
 	$is_admin = is_admin();
@@ -138,18 +140,34 @@ function et_builder_load_framework() {
 	$specific_filter_pages = array( 'edit.php', 'admin.php', 'edit-tags.php' ); // list of admin pages where we need more specific filtering
 
 	$is_edit_library_page = 'edit.php' === $pagenow && isset( $_GET['post_type'] ) && 'et_pb_layout' === $_GET['post_type'];
-	$is_role_editor_page = 'admin.php' === $pagenow && isset( $_GET['page'] ) && 'et_divi_role_editor' === $_GET['page'];
+	$is_role_editor_page = 'admin.php' === $pagenow && isset( $_GET['page'] ) && apply_filters( 'et_divi_role_editor_page', 'et_divi_role_editor' ) === $_GET['page'];
 	$is_import_page = 'admin.php' === $pagenow && isset( $_GET['import'] ) && 'wordpress' === $_GET['import']; // Page Builder files should be loaded on import page as well to register the et_pb_layout post type properly
 	$is_edit_layout_category_page = 'edit-tags.php' === $pagenow && isset( $_GET['taxonomy'] ) && 'layout_category' === $_GET['taxonomy'];
+
+	if ( ! $is_admin || ( $is_admin && in_array( $pagenow, $required_admin_pages ) && ( ! in_array( $pagenow, $specific_filter_pages ) || $is_edit_library_page || $is_role_editor_page || $is_edit_layout_category_page || $is_import_page ) ) ) {
+		return true;
+	} else {
+		return false;
+	}
+
+}
+endif;
+
+if ( ! function_exists( 'et_builder_load_framework' ) ) :
+function et_builder_load_framework() {
 
 	require ET_BUILDER_DIR . 'functions.php';
 
 	// load builder files on front-end and on specific admin pages only.
-	if ( ! $is_admin || ( $is_admin && in_array( $pagenow, $required_admin_pages ) && ( ! in_array( $pagenow, $specific_filter_pages ) || $is_edit_library_page || $is_role_editor_page || $is_edit_layout_category_page || $is_import_page ) ) ) {
+	if ( et_builder_should_load_framework() ) {
+
 		require ET_BUILDER_DIR . 'layouts.php';
 		require ET_BUILDER_DIR . 'class-et-builder-element.php';
 		require ET_BUILDER_DIR . 'class-et-global-settings.php';
 
+		do_action( 'et_builder_framework_loaded' );
+
+		$action_hook = is_admin() ? 'wp_loaded' : 'wp';
 		add_action( $action_hook, 'et_builder_init_global_settings' );
 		add_action( $action_hook, 'et_builder_add_main_elements' );
 	}

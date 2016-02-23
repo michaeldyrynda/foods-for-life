@@ -155,7 +155,7 @@
 		});
 
 		$( 'body' ).on( 'click', '.et-pb-modal-close', function() {
-			$( this ).closest( '.et_pb_modal_overlay' ).remove();
+			et_pb_close_modal( $( this ) );
 		});
 
 		$( 'body' ).on( 'click', '.et_pb_prompt_proceed', function() {
@@ -164,7 +164,7 @@
 			$all_toggles.val( 'on' );
 			$all_toggles.change();
 
-			$( this ).closest( '.et_pb_modal_overlay' ).remove();
+			et_pb_close_modal( $( this ) );
 		});
 
 		$body.append( '<div id="et_pb_loading_animation"></div>' );
@@ -172,5 +172,17 @@
 
 		$( '#et_pb_loading_animation' ).hide();
 		$( '#et_pb_success_animation' ).hide();
+
+		function et_pb_close_modal( $button ) {
+			var $modal_overlay = $button.closest( '.et_pb_modal_overlay' );
+
+			// add class to apply the closing animation to modal
+			$modal_overlay.addClass( 'et_pb_modal_closing' );
+
+			//remove the modal with overlay when animation complete
+			setTimeout( function() {
+				$modal_overlay.remove();
+			}, 600 );
+		}
 	});
 })(jQuery)

@@ -57,7 +57,7 @@ function et_sanitize_key_based_option( $choosen, $options ) {
  * @return string|bool
  */
 function et_sanitize_font_choices( $choosen ) {
-	return et_sanitize_key_based_option( $choosen, et_builder_get_google_fonts() );
+	return et_sanitize_key_based_option( $choosen, et_builder_get_fonts() );
 }
 
 /**

@@ -51,12 +51,13 @@ input[type="range"]::-ms-thumb { width: 15px; height: 15px; border-radius: 15px;
 input.et-pb-range-input::-webkit-outer-spin-button,
 input.et-pb-range-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
-input[type=checkbox] { margin-right: 10px; float: left; margin-top: 0; width: 25px; height: 25px; margin-top: 2px; }
+input[type=checkbox] { margin-right: 10px; margin-top: 0; width: 25px; height: 25px; }
 input[type=checkbox]:checked:before { color: #2E86B9; float: none; }
 
 .customize-control-title { margin-top: 15px; text-transform: uppercase; font-size: 12px;}
 .customize-control-range .customize-control-title { margin-bottom: -8px; }
-.customize-control-checkbox {  font-weight: 600; font-size: 12px; text-transform: uppercase; border: 1px solid #EEEEEE; background-color: #FDFDFD; margin-bottom: -1px; padding: 6px 10px; border-radius: 2px; box-sizing: border-box; -webkit-box-sizing: border-box; }
+.customize-control-checkbox { font-weight: 600; font-size: 12px; text-transform: uppercase; border: 1px solid #EEEEEE; background-color: #FDFDFD; margin-bottom: -1px; padding: 6px 10px; border-radius: 2px; box-sizing: border-box; -webkit-box-sizing: border-box; }
+.customize-control-checkbox label { padding: 0; margin-left: 0; }
 .customize-control button.button { width: 100%; border: none; box-shadow: none; background-color: #2E86B9; color: #fff; height: 30px; }
 .customize-control button.button:hover { color: #fff; background-color: #186EA0; transition: all .5s ease-in-out; -webkit-transition: all .5s ease-in-out; -webkit-transition: all .5s ease-in-out; }
 .customize-control button.remove-button { margin-bottom: 10px; }
@@ -75,7 +76,8 @@ input[type=checkbox]:checked:before { color: #2E86B9; float: none; }
 .wp-full-overlay-sidebar-content::-webkit-scrollbar-thumb, .et-pb-main-settings::-webkit-scrollbar-thumb, ul.et_font_icon::-webkit-scrollbar-thumb, .accordion-section-content::-webkit-scrollbar-thumb { -webkit-border-radius: 0 !important; border-radius: 0 !important; background: #d8d8d8 !important; }
 .wp-full-overlay-sidebar-content::-webkit-thumb:window-inactive, .et-pb-main-settings::-webkit-scrollbar-thumb:window-inactive, ul.et_font_icon::-webkit-scrollbar-thumb:window-inactive, .accordion-section-content::-webkit-scrollbar-thumb:window-inactive { background: #fff !important; }
 
-#customize-control-et_divi-vertical_nav, #customize-control-et_divi-boxed_layout { margin-top: 20px; }
+#customize-control-et_divi-boxed_layout { margin-top: 20px; }
+li#customize-control-et_divi-header_style { margin-bottom: 20px; }
 .control-panel-back:before, .customize-controls-close:before { top: 3px; left: 12px; }
 
 .accordion-section-content li.customize-control:first-of-type, .accordion-section-content li.customize-control:first-of-type .customize-control-title { margin-top: 0 !important; }
@@ -176,6 +178,8 @@ ul.et_font_icon { position: relative; height: 120px; overflow: scroll; min-width
 
 /* Hide Nav Menus Panel in Modules Customizer */
 .et_modules_customizer_option_set #accordion-panel-nav_menus { display: none !important; }
+
+.et_hidden_section { display: none !important; }
 
 /*!
 Animate.css - http://daneden.me/animate
